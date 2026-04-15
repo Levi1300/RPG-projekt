@@ -5,7 +5,8 @@ print("3 = Kilépés")
 bemenet = int(input("Válassz!(1-3): "))
 
 if bemenet == 1:
-    pass
+    print(f"A játék elkezdődött. Válaszd ki a Karaktered az alábbiak közül:\nHarcos\nVarázsló\nÍjász")
+    input()
           
 class Karakter:
     def __init__(self, nev, eletero, sebzes, kepesseg):
