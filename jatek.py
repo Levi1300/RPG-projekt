@@ -36,3 +36,4 @@ karakter3 = Karakterek("Íjász", 80, 45, "Nincs")
 
 karakterek = [karakter1,karakter2,karakter3]
 
+    
