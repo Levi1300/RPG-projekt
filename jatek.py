@@ -8,3 +8,19 @@ if bemenet == 1:
     pass
 if bemenet == 2:
     print("Nehézség")
+
+
+
+
+
+
+
+
+class Harcos:
+    def __init__(self, nev, eletero, sebzes, raktar):
+        self.nev = nev
+        self.eletero = eletero
+        self.sebzes = sebzes
+        self.raktar = raktar
+
+
