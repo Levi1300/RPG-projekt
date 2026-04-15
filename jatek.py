@@ -15,19 +15,11 @@ if bemenet == 2:
     print("Nehézség")
 
 
-
-
-
-
-
 class Karakterek:
     def __init__(self, nev, eletero, sebzes, kepesseg):
         self.nev = nev
         self.eletero = eletero
         self.sebzes = sebzes
-
-
-
 
 
 karakter1 = Karakterek("Harcos", 150, 30, "Nincs")
