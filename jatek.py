@@ -24,3 +24,9 @@ karakter3 = Karakter("Íjász", 80, 45, "Nincs")
 karakterek = [karakter1,karakter2,karakter3]
 
 
+if karakter == karakter1.nev:
+    karakter1.adatok()
+elif karakter == karakter2.nev:
+    karakter2.adatok()
+elif karakter == karakter3.nev:
+    karakter3.adatok()
