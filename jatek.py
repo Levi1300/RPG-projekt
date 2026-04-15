@@ -20,10 +20,12 @@ class Karakter:
         self.sebzes = sebzes
         self.kepesseg = kepesseg
 
+    def adatok(self):
+        print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}")
+
 
 karakter1 = Karakter("Harcos", 150, 30, "Nincs")
 karakter2 = Karakter("Varázsló", 120, 40, "Heal")
 karakter3 = Karakter("Íjász", 80, 45, "Nincs")
 
 karakterek = [karakter1,karakter2,karakter3]
-
