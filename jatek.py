@@ -5,6 +5,7 @@ print("3 = Kilépés")
 bemenet = int(input("Válassz!(1-3): "))
 
 if bemenet == 1:
+    pass
           
 class Karakter:
     def __init__(self, nev, eletero, sebzes, kepesseg):
