@@ -14,6 +14,14 @@ if bemenet == 2:
         
         
 class Karakter:
+=======
+
+    nehezseg = input("Válassz nehézséget!: ")
+    print("Nehézség")
+
+
+class Karakterek:
+>>>>>>> 8a430f0e50dbdb41796c324cff0e6e16c083ae96
     def __init__(self, nev, eletero, sebzes, kepesseg):
         self.nev = nev
         self.eletero = eletero
