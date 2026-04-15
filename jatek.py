@@ -15,9 +15,6 @@ class Karakter:
     def adatok(self):
         print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}")
 
-
-
-
 karakter1 = Karakter("Harcos", 150, 30, "Nincs")
 karakter2 = Karakter("Varázsló", 120, 40, "Heal")
 karakter3 = Karakter("Íjász", 80, 45, "Nincs")
@@ -34,3 +31,4 @@ elif karakter == karakter2.nev:
     karakter2.adatok()
 elif karakter == karakter3.nev:
     karakter3.adatok()
+
