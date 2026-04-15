@@ -1,25 +1,11 @@
 print("1 = Kezdés")
-print("2 = Beállítások")
+print("2 = Információk")
 print("3 = Kilépés")
 
 bemenet = int(input("Válassz!(1-3): "))
 
-if bemenet == 2:
-    print("1 = Könnyű")
-    print("2 = Normál")
-    print("3 = Nehéz")
-    nehezseg = int(input("Válassz nehézséget!(1-3): "))
-    
-    if nehezseg == 1:
-        print("Nehézség beállítva!(Könnyű)")
-    if nehezseg == 2:
-        print("Nehézség beállítva!(Normál)")
-    if nehezseg == 3:
-        print("Nehézség beállítva!(Nehéz)")
-        
-        
-        
-        
+if bemenet == 1:
+          
 class Karakter:
     def __init__(self, nev, eletero, sebzes, kepesseg):
         self.nev = nev
