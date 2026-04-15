@@ -20,7 +20,6 @@ if bemenet == 2:
 
 
 
-
 class Harcos:
     def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
         self.nev = nev
