@@ -1,22 +1,30 @@
-1 == print("Kezdés")
-2 == print("Beállítások")
-3 == print("Kilépés")
+kezdes = print("Kezdés")
+beallitasok = print("Beállítások")
+kilepes = print("Kilépés")
 
-bemenet = input("Válassz!(1-3)")
-
-if bemenet == 1:
+bemenet = input("Válassz!")
+if bemenet == kezdes:
     pass
-if bemenet == 2:
+if bemenet == beallitasok:
+    input("Válassz nehézséget!: ")
     print("Könnyű")
     print("Normál")
     print("Nehéz")
 
+<<<<<<< Updated upstream
     nehezseg = input("Válassz nehézséget!: ")
     print("Nehézség")
 
 
 class Karakterek:
     def __init__(self, nev, eletero, sebzes, kepesseg):
+=======
+
+
+
+class Harcos:
+    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
+>>>>>>> Stashed changes
         self.nev = nev
         self.eletero = eletero
         self.sebzes = sebzes
@@ -28,3 +36,9 @@ karakter3 = Karakterek("Íjász", 80, 45, "Nincs")
 
 karakterek = [karakter1,karakter2,karakter3]
 
+<<<<<<< Updated upstream
+=======
+class Íjász(Harcos):
+    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
+        super().__init__(nev, eletero, sebzes, raktar, kepesseg)
+>>>>>>> Stashed changes
