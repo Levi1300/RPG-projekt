@@ -17,14 +17,10 @@ class Karakter:
 
 
 
-
 karakter1 = Karakter("Harcos", 150, 30, "Nincs")
 karakter2 = Karakter("Varázsló", 120, 40, "Heal")
 karakter3 = Karakter("Íjász", 80, 45, "Nincs")
 
 karakterek = [karakter1,karakter2,karakter3]
 
-if bemenet == 1:
-    print(f"A játék elkezdődött!\n")
-    karakter = input(f"Válaszd ki a Karaktered az alábbiak közül:\n{karakter1.nev}\n{karakter2.nev}\n{karakter3.nev}\n")
 
