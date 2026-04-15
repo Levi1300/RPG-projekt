@@ -17,10 +17,18 @@ if bemenet == 2:
 
 
 class Harcos:
-    def __init__(self, nev, eletero, sebzes, raktar):
+    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
         self.nev = nev
         self.eletero = eletero
         self.sebzes = sebzes
         self.raktar = raktar
 
 
+class Varazslo(Harcos):
+    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
+        super().__init__(nev, eletero, sebzes, raktar, kepesseg)
+
+
+class Íjász(Harcos):
+    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
+        super().__init__(nev, eletero, sebzes, raktar, kepesseg)
