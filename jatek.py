@@ -11,20 +11,12 @@ if bemenet == beallitasok:
     print("Normál")
     print("Nehéz")
 
-<<<<<<< Updated upstream
     nehezseg = input("Válassz nehézséget!: ")
     print("Nehézség")
 
 
 class Karakterek:
     def __init__(self, nev, eletero, sebzes, kepesseg):
-=======
-
-
-
-class Harcos:
-    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
->>>>>>> Stashed changes
         self.nev = nev
         self.eletero = eletero
         self.sebzes = sebzes
