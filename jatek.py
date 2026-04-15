@@ -36,9 +36,3 @@ karakter3 = Karakterek("Íjász", 80, 45, "Nincs")
 
 karakterek = [karakter1,karakter2,karakter3]
 
-<<<<<<< Updated upstream
-=======
-class Íjász(Harcos):
-    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
-        super().__init__(nev, eletero, sebzes, raktar, kepesseg)
->>>>>>> Stashed changes
