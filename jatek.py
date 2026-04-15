@@ -1,16 +1,14 @@
-1 == print("Kezdés")
-2 == print("Beállítások")
-3 == print("Kilépés")
+print("1 = Kezdés")
+print("2 = Beállítások")
+print("3 = Kilépés")
 
-bemenet = input("Válassz!(1-3)")
+bemenet = int(input("Válassz!(1-3)"))
 
-if bemenet == 1:
-    pass
+
 if bemenet == 2:
     print("Könnyű")
     print("Normál")
     print("Nehéz")
-
     nehezseg = input("Válassz nehézséget!: ")
     print("Nehézség")
 
@@ -36,4 +34,3 @@ karakter3 = Karakterek("Íjász", 80, 45, "Nincs")
 
 karakterek = [karakter1,karakter2,karakter3]
 
-    
