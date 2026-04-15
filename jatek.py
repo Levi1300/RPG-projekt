@@ -20,19 +20,19 @@ if bemenet == 2:
 
 
 
-class Harcos:
-    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
+class Karakterek:
+    def __init__(self, nev, eletero, sebzes, kepesseg):
         self.nev = nev
         self.eletero = eletero
         self.sebzes = sebzes
-        self.raktar = raktar
 
 
-class Varazslo(Harcos):
-    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
-        super().__init__(nev, eletero, sebzes, raktar, kepesseg)
 
 
-class Íjász(Harcos):
-    def __init__(self, nev, eletero, sebzes, raktar, kepesseg):
-        super().__init__(nev, eletero, sebzes, raktar, kepesseg)
+
+karakter1 = Karakterek("Harcos", 150, 30, "Nincs")
+karakter2 = Karakterek("Varázsló", 120, 40, "Heal")
+karakter3 = Karakterek("Íjász", 80, 45, "Nincs")
+
+karakterek = [karakter1,karakter2,karakter3]
+
