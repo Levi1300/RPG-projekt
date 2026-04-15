@@ -2,14 +2,9 @@ print("1 = Kezdés")
 print("2 = Információk")
 print("3 = Kilépés")
 
-bemenet = int(input("Válassz!(1-3): "))
+bemenet = int(input("Válassz!(1-3): \n"))
 
-if bemenet == 1:
-    print(f"A játék elkezdődött. Válaszd ki a Karaktered az alábbiak közül:\nHarcos\nVarázsló\nÍjász")
-    input()
-
-
-          
+ 
 class Karakter:
     def __init__(self, nev, eletero, sebzes, kepesseg):
         self.nev = nev
@@ -30,7 +25,6 @@ karakter3 = Karakter("Íjász", 80, 45, "Nincs")
 karakterek = [karakter1,karakter2,karakter3]
 
 if bemenet == 1:
-    print(f"A játék elkezdődött. Válaszd ki a Karaktered az alábbiak közül:\n{karakter1.nev}\n{karakter2.nev}\n{karakter3.nev}")
-    input()
-
+    print(f"A játék elkezdődött!\n")
+    karakter = input(f"Válaszd ki a Karaktered az alábbiak közül:\n{karakter1.nev}\n{karakter2.nev}\n{karakter3.nev}\n")
 
