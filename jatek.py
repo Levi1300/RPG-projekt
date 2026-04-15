@@ -28,3 +28,9 @@ if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Válaszd ki a Karaktered az alábbiak közül:\n{karakter1.nev}\n{karakter2.nev}\n{karakter3.nev}\n")
 
+if karakter == karakter1.nev:
+    karakter1.adatok()
+elif karakter == karakter2.nev:
+    karakter2.adatok()
+elif karakter == karakter3.nev:
+    karakter3.adatok()
