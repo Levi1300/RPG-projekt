@@ -17,7 +17,7 @@ if bemenet == 2:
     if nehezseg == 3:
         print("Nehézség beállítva!(Nehéz)")
         
-        
+
         
         
 class Karakter:
