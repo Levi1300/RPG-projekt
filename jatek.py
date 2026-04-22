@@ -1,3 +1,4 @@
+
 print("---RPG Projekt---")
 print("1 = Kezdés")
 print("2 = Információk")
@@ -31,14 +32,10 @@ class Karakter:
 
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
-    karakter = input(f"")
+    karakter = input(f"Add meg a hősöd nevét!")
 
 
       
 
-karakter1 = Karakter("Harcos", 150, 30, "Nincs", 500)
-
-
-
-
+karakter1 = Karakter(karakter, 150, 30, "Nincs", 500)
 
