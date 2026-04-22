@@ -54,5 +54,5 @@ if bemenet == 1:
 
       
 
-karakter1 = Karakter(karakter, 15000, 30, 0, 500)
+karakter1 = Karakter(karakter, 15000, 300, 0, 500)
 
