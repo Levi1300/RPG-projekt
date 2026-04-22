@@ -58,6 +58,10 @@ def harc():
         print(f"Az ellenfeled egy {ellenfel2.neve}")
     if ellenfelrandom == 3:
         print(f"Az ellenfeled egy {ellenfel3.neve}")
+    print("1 = támadás")
+    print("2 = heal")
+    print("3 = kihajolás")
+    
 
 
 def jatek():
