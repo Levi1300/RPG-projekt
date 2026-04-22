@@ -33,11 +33,18 @@ class Karakter:
     def adatok(self):
         print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}\nPénze: {self.penz}")
 
+    def harc(self):
+        pass
+
+
 def jatek():
     print("---Játék---")
     print("1 = Harc")
     print("2 = Tárgyaid")
     print("3 = ...")
+    jatek_menu_valasztas = int(input())
+    if jatek_menu_valasztas == 1:
+        pass        
 
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
