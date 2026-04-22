@@ -67,4 +67,3 @@ class Ellenfel:
 ellenfel1 = Ellenfel("Csontváz", 1500, 100)
 ellenfel2 = Ellenfel("Zombi", 1212, 340)
 ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
-
