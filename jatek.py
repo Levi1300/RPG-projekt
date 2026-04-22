@@ -6,7 +6,13 @@ print("-----------------")
 
 bemenet = int(input("Válassz!(1-3): \n"))
 
+<<<<<<< Updated upstream
  
+=======
+
+
+          
+>>>>>>> Stashed changes
 class Karakter:
     def __init__(self, nev, eletero, sebzes, kepesseg, penz):
         self.nev = nev
@@ -34,6 +40,7 @@ karakter3 = Karakter("Íjász", 80, 45, "Nincs")
 karakterek = [karakter1,karakter2,karakter3]
 
 
+<<<<<<< Updated upstream
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Válaszd ki a Karaktered az alábbiak közül:\n{karakter1.nev}\n{karakter2.nev}\n{karakter3.nev}\n")
@@ -44,6 +51,16 @@ elif karakter == karakter2.nev:
     karakter2.adatok()
 elif karakter == karakter3.nev:
     karakter3.adatok()
+=======
+def karakterek1(self):
+    for karakterek1 in karakterek:
+        print(karakterek.nev)
+
+
+if bemenet == 1:
+    print(f"A játék elkezdődött. Válaszd ki a Karaktered az alábbiak közül: {karakter1}")
+    input()
+>>>>>>> Stashed changes
 
 
 <<<<<<< HEAD
