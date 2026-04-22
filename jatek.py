@@ -1,5 +1,4 @@
-
-print("---RPG Projekt---")
+print("\n---RPG Projekt---")
 print("1 = Kezdés")
 print("2 = Információk")
 print("3 = Kilépés")
@@ -9,7 +8,7 @@ bemenet = int(input("Válassz!(1-3): \n"))
 
 if bemenet == 2:
     print("---Információk---")
-    print("infok")
+    print("infok.......................2")
     print("-----------------\n")
     print("---RPG Projekt---")
     print("1 = Kezdés")
@@ -23,19 +22,35 @@ if bemenet == 3:
     
  
 class Karakter:
-    def __init__(self, nev, eletero, sebzes, kepesseg, penz):
+    def __init__(self, nev, eletero, sebzes, szint, penz):
         self.nev = nev
-        self.eletero = eletero
-        self.sebzes = sebzes
-        self.kepesseg = kepesseg
-        self.penz = penz
+        self.eletero = int(eletero)
+        self.sebzes = int(sebzes)
+        self.szint = int(szint)
+        self.penz = int(penz)
 
     def adatok(self):
-        print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}\nPénze: {self.penz}")
+        print(f"A karaktered neve: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nSzintje: {self.szint}\nPénze: {self.penz}")
 
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Add meg a hősöd nevét!")
 
-karakter1 = Karakter(karakter, 150, 30, "Nincs", 500)
+karakter1 = Karakter(karakter, 15000, 300, 0, 500)
+karakter1.adatok()
 
+class Ellenfel:
+    def __init__(self, neve, elet, tamadas):
+        self.neve = neve
+        self.elet = int(elet)
+        self.tamadas = int(tamadas)
+
+    def adatok(self):
+        print(f"Az ellenfél neve: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nSzintje: {self.szint}\nPénze: {self.penz}")
+
+
+ellenfel1 = Ellenfel("Csontváz", 1500, 100)
+ellenfel2 = Ellenfel("Zombi", 1212, 340)
+ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
+
+        
