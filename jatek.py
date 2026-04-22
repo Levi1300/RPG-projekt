@@ -61,7 +61,7 @@ def harc():
     print("1 = támadás")
     print("2 = heal")
     print("3 = kihajolás")
-    
+    harcvalasztas = int(input())
 
 
 def jatek():
