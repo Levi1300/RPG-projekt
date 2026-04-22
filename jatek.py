@@ -61,8 +61,7 @@ def harc():
     print("1 = támadás")
     print("2 = heal")
     print("3 = kihajolás")
-    harcvalasztas = int(input())
-
+    
 
 def jatek():
     print("---Játék---")
@@ -71,13 +70,11 @@ def jatek():
     print("3 = ...")
     jatek_menu_valasztas = int(input())
     if jatek_menu_valasztas == 1:
-        harc()  
+        harc()
 
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Add meg a hősöd nevét!")
     jatek()
-
-
 
 karakter1 = Karakter(karakter, 15000, 300, 0, 500)
