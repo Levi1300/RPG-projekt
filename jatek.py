@@ -70,14 +70,13 @@ ellenfel2 = Ellenfel("Zombi", 1212, 340)
 ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
 
 
-
 def harc():
-    ellenfelharc = randint (1, 3)
-    if ellenfelharc == 1:
+    ellenfelrandom = randint(1,3)
+    if ellenfelrandom == 1:
         print(f"Az ellenfeled egy {ellenfel1.neve}")
-    if ellenfelharc == 2:
+    if ellenfelrandom == 2:
         print(f"Az ellenfeled egy {ellenfel2.neve}")
-    if ellenfelharc == 3:
+    if ellenfelrandom == 3:
         print(f"Az ellenfeled egy {ellenfel3.neve}")
 
 
