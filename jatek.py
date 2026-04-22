@@ -34,7 +34,7 @@ class Karakter:
         print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}\nPénze: {self.penz}")
 
     def harc(self):
-        pass
+        ellenfelharc = randint (1, 3)
 
 
 def jatek():
