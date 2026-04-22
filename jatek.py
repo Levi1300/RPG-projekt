@@ -23,22 +23,29 @@ if bemenet == 3:
     
  
 class Karakter:
-    def __init__(self, nev, eletero, sebzes, kepesseg, penz):
+    def __init__(self, nev, eletero, sebzes, szint, penz):
         self.nev = nev
-        self.eletero = eletero
-        self.sebzes = sebzes
-        self.kepesseg = kepesseg
-        self.penz = penz
+        self.eletero = int(eletero)
+        self.sebzes = int(sebzes)
+        self.szint = int(szint)
+        self.penz = int(penz)
 
     def adatok(self):
         print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}\nPénze: {self.penz}")
 
+def jatek():
+    print("---Játék---")
+    print("1 = Harc")
+    print("2 = Tárgyaid")
+    print("3 = ...")
+
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Add meg a hősöd nevét!")
+    jatek()
 
 
       
 
-karakter1 = Karakter(karakter, 150, 30, "Nincs", 500)
+karakter1 = Karakter(karakter, 150, 30, 0, 500)
 
