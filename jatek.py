@@ -52,16 +52,24 @@ ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
 
 def harc():
     ellenfelrandom = randint(1,3)
+    ellenfelhp = 0
     if ellenfelrandom == 1:
         print(f"Az ellenfeled egy {ellenfel1.neve}")
+        ellenfelhp = ellenfel1.elet
     if ellenfelrandom == 2:
         print(f"Az ellenfeled egy {ellenfel2.neve}")
+        ellenfelhp = ellenfel2.elet
     if ellenfelrandom == 3:
         print(f"Az ellenfeled egy {ellenfel3.neve}")
+        ellenfelhp = ellenfel3.elet
     print("1 = támadás")
     print("2 = heal")
     print("3 = kihajolás")
     harcvalasztas = int(input())
+    if harcvalasztas == 1:
+        sebzes = karakter1.sebzes
+        ellenfelhp = ellenfelhp - sebzes
+        print(f"Az ellenfélbe sebeztél {sebzes} ez által {ellenfelhp}hp-ja maradt.")
 
 
 def jatek():
@@ -78,6 +86,6 @@ if bemenet == 1:
     karakter = input(f"Add meg a hősöd nevét!")
     jatek()
 
-
-
 karakter1 = Karakter(karakter, 15000, 300, 0, 500)
+
+
