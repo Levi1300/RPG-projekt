@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-print("\n---RPG Projekt---")
-=======
 from random import randint
-print("---RPG Projekt---")
->>>>>>> 369ddb9a84ac96fedd373c66c60942702997e721
+print("\n---RPG Projekt---")
 print("1 = Kezdés")
 print("2 = Információk")
 print("3 = Kilépés")
@@ -71,5 +67,3 @@ class Ellenfel:
 ellenfel1 = Ellenfel("Csontváz", 1500, 100)
 ellenfel2 = Ellenfel("Zombi", 1212, 340)
 ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
-
-        
