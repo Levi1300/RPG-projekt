@@ -1,4 +1,4 @@
-
+from random import randint
 print("---RPG Projekt---")
 print("1 = Kezdés")
 print("2 = Információk")
@@ -54,5 +54,5 @@ if bemenet == 1:
 
       
 
-karakter1 = Karakter(karakter, 150, 30, 0, 500)
+karakter1 = Karakter(karakter, 15000, 30, 0, 500)
 
