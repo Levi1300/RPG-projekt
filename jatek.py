@@ -36,7 +36,6 @@ class Karakter:
     def harc(self):
         ellenfelharc = randint (1, 3)
 
-
 def jatek():
     print("---Játék---")
     print("1 = Harc")
@@ -44,12 +43,13 @@ def jatek():
     print("3 = ...")
     jatek_menu_valasztas = int(input())
     if jatek_menu_valasztas == 1:
-        pass        
+        pass  
 
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Add meg a hősöd nevét!")
     jatek()
+
 
 karakter1 = Karakter(karakter, 15000, 300, 0, 500)
 karakter1.adatok()
