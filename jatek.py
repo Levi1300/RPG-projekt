@@ -53,7 +53,11 @@ ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
 def harc():
     ellenfelrandom = randint(1,3)
     if ellenfelrandom == 1:
-        print(f"Az ellenfeled")
+        print(f"Az ellenfeled egy {ellenfel1.neve}")
+    if ellenfelrandom == 2:
+        print(f"Az ellenfeled egy {ellenfel2.neve}")
+    if ellenfelrandom == 3:
+        print(f"Az ellenfeled egy {ellenfel3.neve}")
 
 
 def jatek():
