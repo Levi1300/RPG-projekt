@@ -50,6 +50,10 @@ ellenfel2 = Ellenfel("Zombi", 1212, 340)
 ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
 
 
+def harc():
+    ellenfelrandom = randint(1,3)
+    if ellenfelrandom == 1:
+        print(f"Az ellenfeled")
 
 
 def jatek():
