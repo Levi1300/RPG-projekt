@@ -33,8 +33,6 @@ class Karakter:
     def adatok(self):
         print(f"A karaktered neve: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nSzintje: {self.szint}\nPénze: {self.penz}")
 
-    def harc(self):
-        ellenfelharc = randint (1, 3)
 
 def jatek():
     print("---Játék---")
@@ -63,7 +61,14 @@ class Ellenfel:
     def adatok(self):
         print(f"Az ellenfél neve: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nSzintje: {self.szint}\nPénze: {self.penz}")
 
+    def harc(self):
+        ellenfelharc = randint (1, 3)
+        if ellenfelharc == 1:
+            print(f"Az ellenfeled egy {ellenfel1.neve}")
+
 
 ellenfel1 = Ellenfel("Csontváz", 1500, 100)
 ellenfel2 = Ellenfel("Zombi", 1212, 340)
 ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
+
+
