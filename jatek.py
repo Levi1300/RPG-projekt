@@ -17,6 +17,9 @@ if bemenet == 2:
     print("-----------------")
     bemenet = int(input("Válassz!(1-3): \n"))
 
+if bemenet == 3:
+    print("---Kilépés---")
+    
  
 class Karakter:
     def __init__(self, nev, eletero, sebzes, kepesseg, penz):
@@ -33,8 +36,6 @@ if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"")
 
-
-      
 
 karakter1 = Karakter("Harcos", 150, 30, "Nincs", 500)
 
