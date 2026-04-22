@@ -35,25 +35,13 @@ class Karakter:
 
 
 
-def jatek():
-    print("---Játék---")
-    print("1 = Harc")
-    print("2 = Tárgyaid")
-    print("3 = ...")
-    jatek_menu_valasztas = int(input())
-    if jatek_menu_valasztas == 1:
-        pass        
-
-if bemenet == 1:
-    print(f"A játék elkezdődött!\n")
-    karakter = input(f"Add meg a hősöd nevét!")
-    jatek()
 
 
 
 
-karakter1 = Karakter(karakter, 15000, 300, 0, 500)
-karakter1.adatok()
+
+
+
 
 class Ellenfel:
     def __init__(self, neve, elet, tamadas):
@@ -64,10 +52,7 @@ class Ellenfel:
     def adatok(self):
         print(f"Az ellenfél neve: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nSzintje: {self.szint}\nPénze: {self.penz}")
 
-    def harc(self):
-        ellenfelharc = randint (1, 3)
-        if ellenfelharc == 1:
-            print(f"Az ellenfeled egy {ellenfel1.neve}")
+
 
 
 ellenfel1 = Ellenfel("Csontváz", 1500, 100)
@@ -75,3 +60,30 @@ ellenfel2 = Ellenfel("Zombi", 1212, 340)
 ellenfel3 = Ellenfel("Sötét Lovag",30000, 1000)
 
 
+
+def harc():
+    ellenfelharc = randint (1, 3)
+    if ellenfelharc == 1:
+        print(f"Az ellenfeled egy {ellenfel1.neve}")
+    if ellenfelharc == 2:
+        print(f"Az ellenfeled egy {ellenfel2.neve}")
+    if ellenfelharc == 3:
+        print(f"Az ellenfeled egy {ellenfel3.neve}")
+
+
+def jatek():
+    print("---Játék---")
+    print("1 = Harc")
+    print("2 = Tárgyaid")
+    print("3 = ...")
+    jatek_menu_valasztas = int(input())
+    if jatek_menu_valasztas == 1:
+        harc()
+
+if bemenet == 1:
+    print(f"A játék elkezdődött!\n")
+    karakter = input(f"Add meg a hősöd nevét!")
+    jatek()
+
+karakter1 = Karakter(karakter, 15000, 300, 0, 500)
+karakter1.adatok()
