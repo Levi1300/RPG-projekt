@@ -1,6 +1,8 @@
+print("---RPG Projekt---")
 print("1 = Kezdés")
 print("2 = Információk")
 print("3 = Kilépés")
+print("-----------------")
 
 bemenet = int(input("Válassz!(1-3): \n"))
 
@@ -16,11 +18,21 @@ class Karakter:
     def adatok(self):
         print(f"A jelenlegi Karaktered: {self.nev}\nÉletereje: {self.eletero}\nSebzése: {self.sebzes}\nképessége: {self.kepesseg}\nPénze: {self.penz}")
 
+<<<<<<< HEAD
 karakter1 = Karakter("Harcos", 150, 30, "Nincs", 500)
 karakter2 = Karakter("Varázsló", 120, 40, "Heal", 450)
 karakter3 = Karakter("Íjász", 80, 45, "Nincs", 400)
+=======
+
+
+
+karakter1 = Karakter("Harcos", 150, 30, "Nincs")
+karakter2 = Karakter("Varázsló", 120, 40, "Heal")
+karakter3 = Karakter("Íjász", 80, 45, "Nincs")
+>>>>>>> d98942aaa41b372f77ff1f48cd0f65537a3a1a40
 
 karakterek = [karakter1,karakter2,karakter3]
+
 
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
@@ -34,4 +46,7 @@ elif karakter == karakter3.nev:
     karakter3.adatok()
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d98942aaa41b372f77ff1f48cd0f65537a3a1a40
