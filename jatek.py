@@ -58,25 +58,15 @@ def jatek(karakter):
         elif valasztas == 2:
             break
 
-
+print("---RPG PROJEKT---")
 print("1 = Kezdés")
 print("2 = Kilépés")
+print("-----------------")
 
 bemenet = int(input())
 
 if bemenet == 1:
-<<<<<<< HEAD
     nev = input("Neved: ")
     karakter = Karakter(nev, 1500, 200, 1, 100)
     jatek(karakter)
     
-=======
-    print(f"A játék elkezdődött!\n")
-    karakter = input(f"Add meg a hősöd nevét!")
-    jatek(karakter)
-
-karakter1 = Karakter(karakter, 15000, 300, 0, 500)
-
-
-
->>>>>>> 66a83487e16cf003de0c068557b804f9293d2713
