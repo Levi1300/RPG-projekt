@@ -1,4 +1,4 @@
-from random import randint, choice
+from random import randint
 
 print("\n---RPG Projekt---")
 
@@ -40,7 +40,6 @@ def harc(jatekos, ellenfel):
     print(f"\n⚔️ Harc indul! Ellenfél: {ellenfel.neve}")
 
     while jatekos.eletero > 0 and ellenfel.elet > 0:
-        # játékos támad
         sebzes = randint(jatekos.sebzes - 20, jatekos.sebzes + 20)
         ellenfel.elet -= sebzes
         print(f"Te támadsz: {sebzes} sebzés")
@@ -51,7 +50,6 @@ def harc(jatekos, ellenfel):
             jatekos.szint += 1
             return True
 
-        # ellenfél támad
         sebzes = randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20)
         jatekos.eletero -= sebzes
         print(f"{ellenfel.neve} támad: {sebzes} sebzés")
@@ -74,7 +72,6 @@ def jatek(jatekos):
         valasztas = input("Válassz: ")
 
         if valasztas == "1":
-            # Boss csak 5 győzelem után
             if legyozott >= 5:
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! Nyertél!")
@@ -82,7 +79,9 @@ def jatek(jatekos):
                 else:
                     break
             else:
-                ellenfel = choice(ellenfelek)
+                # choice HELYETT:
+                ellenfel = ellenfelek[randint(0, len(ellenfelek) - 1)]
+
                 if harc(jatekos, ellenfel):
                     legyozott += 1
                 else:
