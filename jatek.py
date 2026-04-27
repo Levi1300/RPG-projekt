@@ -175,10 +175,11 @@ def jatek(jatekos):
         valasztas = input("Válassz: ")
 
         if valasztas == "1":
-            if legyozott >= 15:
+            if legyozott == 15:
                 boss = uj_boss()
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a BOSST! Nyertél!")
+                    print("\n🏆 Megölted a BOSST! A jutalmad 1500$")
+                    jatekos.penz += 1500
             else:
                 ellenfel = uj_ellenfel()
                 if harc(jatekos, ellenfel):
