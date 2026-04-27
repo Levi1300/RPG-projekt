@@ -44,9 +44,9 @@ class Karakter:
                     self.max_eletero += 200
                     self.eletero = self.max_eletero
 
-                    self.hp_ar += 10  # 🔥 ár növelése
+                    self.hp_ar += 10  # ár növelése
 
-                    print("❤️ Életerő növelve!")
+                    print(f"❤️ Életerő növelve! Új ár: {self.hp_ar}")
                 else:
                     print("Nincs elég pénzed!")
 
@@ -55,14 +55,15 @@ class Karakter:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
 
-                    self.sebzes_ar += 10  # 🔥 ár növelése
+                    self.sebzes_ar += 10  # ár növelése
 
-                    print("⚔️ Sebzés növelve!")
+                    print(f"⚔️ Sebzés növelve! Új ár: {self.sebzes_ar}")
                 else:
                     print("Nincs elég pénzed!")
 
             elif val == "3":
                 break
+
             else:
                 print("Hibás választás!")
 
