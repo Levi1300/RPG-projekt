@@ -110,11 +110,7 @@ ellenfel_adatok = [
     ("Óriáspók", 700, 90)
 ]
 
-boss_adatok = [
-    ("Sötét Lovag", 5000, 300)
-    ("Boss2", 10000, 600)
-]
-
+boss_adatok = ("Sötét Lovag", 5000, 300)
 
 def uj_ellenfel():
     i = randint(0, len(ellenfel_adatok) - 1)
@@ -182,10 +178,7 @@ def jatek(jatekos):
                 boss = uj_boss()
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! A jutalmad 1500$")
-                    jatekos.penz += 1500
-        if valasztas == "1":
-            if legyozott == 30:
-                boss = uj_boss(2)   
+                    jatekos.penz += 1500  
             else:
                 ellenfel = uj_ellenfel()
                 if harc(jatekos, ellenfel):
