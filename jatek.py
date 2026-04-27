@@ -140,7 +140,7 @@ def jatek(jatekos):
         valasztas = input("Válassz: ")
 
         if valasztas == "1":
-            if legyozott >= 5:
+            if legyozott >= 10:
                 boss = uj_boss()
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! Nyertél!")
