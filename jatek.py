@@ -1,5 +1,7 @@
 from random import randint
 
+print("\n---RPG Projekt---")
+
 class Karakter:
     def __init__(self, nev, eletero, sebzes, szint, penz):
         self.nev = nev
@@ -8,54 +10,89 @@ class Karakter:
         self.szint = szint
         self.penz = penz
 
+    def adatok(self):
+        print(f"\n---Karakter adatok---")
+        print(f"Név: {self.nev}")
+        print(f"Életerő: {self.eletero}")
+        print(f"Sebzés: {self.sebzes}")
+        print(f"Szint: {self.szint}")
+        print(f"Pénz: {self.penz}")
+
 class Ellenfel:
     def __init__(self, neve, elet, tamadas):
         self.neve = neve
         self.elet = elet
         self.tamadas = tamadas
 
-
+# Ellenfelek listája
 ellenfelek = [
-    Ellenfel("Csontváz", 1500, 100),
-    Ellenfel("Zombi", 1212, 340),
-    Ellenfel("Sötét Lovag", 3000, 500)
+    Ellenfel("Csontváz", 500, 50),
+    Ellenfel("Zombi", 800, 80),
+    Ellenfel("Ork", 1200, 120),
+    Ellenfel("Bandita", 900, 100),
+    Ellenfel("Óriáspók", 700, 90)
 ]
 
+# Boss
+boss = Ellenfel("Sötét Lovag", 5000, 300)
 
-def harc(karakter):
-    ellenfel = ellenfelek[randint(0, 2)]
-    print(f"Az ellenfeled: {ellenfel.neve}")
+def harc(jatekos, ellenfel):
+    print(f"\n⚔️ Harc indul! Ellenfél: {ellenfel.neve}")
 
-    while ellenfel.elet > 0 and karakter.eletero > 0:
-        print("\n1 = támadás")
-        valasztas = int(input())
+    while jatekos.eletero > 0 and ellenfel.elet > 0:
+        # játékos támad
+        sebzes = randint(jatekos.sebzes - 20, jatekos.sebzes + 20)
+        ellenfel.elet -= sebzes
+        print(f"Te támadsz: {sebzes} sebzés")
 
-        if valasztas == 1:
-            ellenfel.elet -= karakter.sebzes
-            print(f"Sebzés: {karakter.sebzes}")
+        if ellenfel.elet <= 0:
+            print(f"Legyőzted: {ellenfel.neve}!")
+            jatekos.penz += 100
+            jatekos.szint += 1
+            return True
 
-        if ellenfel.elet > 0:
-            karakter.eletero -= ellenfel.tamadas
-            print(f"Az ellenfél visszatámad: {ellenfel.tamadas}")
+        # ellenfél támad
+        sebzes = randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20)
+        jatekos.eletero -= sebzes
+        print(f"{ellenfel.neve} támad: {sebzes} sebzés")
 
-        print(f"Te HP: {karakter.eletero} | Ellenfél HP: {ellenfel.elet}")
+        print(f"HP: {jatekos.eletero}")
 
-    if karakter.eletero <= 0:
-        print("Meghaltál!")
-    else:
-        print("Győztél!")
+        if jatekos.eletero <= 0:
+            print("Meghaltál!")
+            return False
 
+def jatek(jatekos):
+    legyozott = 0
 
-def jatek(karakter):
-    while True:
-        print("\n1 = Harc")
-        print("2 = Kilépés")
+    while jatekos.eletero > 0:
+        print("\n---Játék---")
+        print("1 = Harc")
+        print("2 = Karakter adatok")
+        print("3 = Kilépés")
 
-        valasztas = int(input())
+        valasztas = input("Válassz: ")
 
-        if valasztas == 1:
-            harc(karakter)
-        elif valasztas == 2:
+        if valasztas == "1":
+            # Boss csak 5 győzelem után
+            if legyozott >= 5:
+                if harc(jatekos, boss):
+                    print("\n🏆 Megölted a BOSST! Nyertél!")
+                    break
+                else:
+                    break
+            else:
+                ellenfel = choice(ellenfelek)
+                if harc(jatekos, ellenfel):
+                    legyozott += 1
+                else:
+                    break
+
+        elif valasztas == "2":
+            jatekos.adatok()
+
+        elif valasztas == "3":
+            print("Kilépés...")
             break
 
 print("---RPG PROJEKT---")
@@ -63,7 +100,7 @@ print("1 = Kezdés")
 print("2 = Kilépés")
 print("-----------------")
 
-bemenet = int(input())
+bemenet = input("Válassz (1-3): ")
 
 if bemenet == 1:
     nev = input("Neved: ")
