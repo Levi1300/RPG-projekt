@@ -24,7 +24,7 @@ class Ellenfel:
         self.elet = elet
         self.tamadas = tamadas
 
-# Ellenfelek listája
+
 ellenfelek = [
     Ellenfel("Csontváz", 500, 50),
     Ellenfel("Zombi", 800, 80),
@@ -33,13 +33,17 @@ ellenfelek = [
     Ellenfel("Óriáspók", 700, 90)
 ]
 
-# Boss
+
 boss = Ellenfel("Sötét Lovag", 5000, 300)
 
 def harc(jatekos, ellenfel):
     print(f"\n⚔️ Harc indul! Ellenfél: {ellenfel.neve}")
 
     while jatekos.eletero > 0 and ellenfel.elet > 0:
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 32da242ebbdc1df24559f23396c07d0972fb5214
         sebzes = randint(jatekos.sebzes - 20, jatekos.sebzes + 20)
         ellenfel.elet -= sebzes
         print(f"Te támadsz: {sebzes} sebzés")
@@ -50,6 +54,10 @@ def harc(jatekos, ellenfel):
             jatekos.szint += 1
             return True
 
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 32da242ebbdc1df24559f23396c07d0972fb5214
         sebzes = randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20)
         jatekos.eletero -= sebzes
         print(f"{ellenfel.neve} támad: {sebzes} sebzés")
@@ -72,6 +80,10 @@ def jatek(jatekos):
         valasztas = input("Válassz: ")
 
         if valasztas == "1":
+<<<<<<< HEAD
+=======
+            
+>>>>>>> 32da242ebbdc1df24559f23396c07d0972fb5214
             if legyozott >= 5:
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! Nyertél!")
@@ -94,16 +106,14 @@ def jatek(jatekos):
             print("Kilépés...")
             break
 
-        else:
-            print("Hibás választás!")
+print("---RPG PROJEKT---")
+print("1 = Kezdés")
+print("2 = Kilépés")
+print("-----------------")
 
-# Főmenü
-while True:
-    print("\n---Főmenü---")
-    print("1 = Kezdés")
-    print("2 = Információk")
-    print("3 = Kilépés")
+bemenet = input("Válassz (1-3): ")
 
+<<<<<<< HEAD
     bemenet = input("Válassz (1-3): ")
 
     if bemenet == "1":
@@ -121,3 +131,10 @@ while True:
 
     else:
         print("Hibás választás!")
+=======
+if bemenet == 1:
+    nev = input("Neved: ")
+    karakter = Karakter(nev, 1500, 200, 1, 100)
+    jatek(karakter)
+    
+>>>>>>> 32da242ebbdc1df24559f23396c07d0972fb5214
