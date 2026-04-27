@@ -69,3 +69,4 @@ if bemenet == 1:
     nev = input("Neved: ")
     karakter = Karakter(nev, 1500, 200, 1, 100)
     jatek(karakter)
+    
