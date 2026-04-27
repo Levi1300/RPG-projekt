@@ -142,7 +142,7 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
-            jatekos.penz += (randint(50, 250))
+            jatekos.penz += (randint(90, 300))
             jatekos.szint += 1
             return True
 
@@ -180,9 +180,6 @@ def jatek(jatekos):
                 boss = uj_boss()
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! Nyertél!")
-                    break
-                else:
-                    break
             else:
                 ellenfel = uj_ellenfel()
                 if harc(jatekos, ellenfel):
