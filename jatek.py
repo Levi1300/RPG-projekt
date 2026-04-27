@@ -169,7 +169,7 @@ def jatek(jatekos):
         print("\n---Játék---")
         print("1 = Harc")
         print("2 = Karakter adatok")
-        print("3 = Gyógyítás (50 pénz)")
+        print("3 = Gyógyítás")
         print("4 = Fejlesztés")
         print("5 = Kilépés")
 
