@@ -67,7 +67,7 @@ bemenet = int(input())
 if bemenet == 1:
     print(f"A játék elkezdődött!\n")
     karakter = input(f"Add meg a hősöd nevét!")
-    jatek()
+    jatek(karakter)
 
 karakter1 = Karakter(karakter, 15000, 300, 0, 500)
 
