@@ -116,7 +116,7 @@ def harc(jatekos, ellenfel):
         sebzes = max(0, randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20))
         jatekos.eletero -= sebzes
         print(f"👹 {ellenfel.neve} támad: {sebzes} sebzés")
-        print(f"❤️ HP-d: {max(0, jatekos.eletero)}")
+        print(f"❤️ HP-d: {max(0, jatekos.eletero)}\n")
 
         if jatekos.eletero <= 0:
             print("\n💀 Meghaltál!")
