@@ -141,7 +141,7 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
-            jatekos.penz += (randint(150, 300))
+            jatekos.penz += (randint(150, 450))
             jatekos.szint += 1
             return True
 
@@ -175,7 +175,7 @@ def jatek(jatekos):
         valasztas = input("Válassz: ")
 
         if valasztas == "1":
-            if legyozott >= 10:
+            if legyozott >= 15:
                 boss = uj_boss()
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! Nyertél!")
