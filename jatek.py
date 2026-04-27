@@ -69,7 +69,6 @@ class Karakter:
                 if self.penz >= self.hp_ar:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
-                    self.eletero = self.max_eletero
 
                     self.hp_ar += 10  # ár növelése
 
