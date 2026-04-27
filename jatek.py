@@ -3,13 +3,15 @@ from random import randint
 print("\n---RPG Projekt---")
 
 class Karakter:
-    def __init__(self, nev, eletero, sebzes, szint, penz):
+    def __init__(self, nev, eletero, sebzes, szint, penz,):
         self.nev = nev
         self.max_eletero = eletero
         self.eletero = eletero
         self.sebzes = sebzes
         self.szint = szint
         self.penz = penz
+        self.hp_ar = 100
+        self.sebzes_ar = 100
 
     def adatok(self):
         print(f"\n---Karakter adatok---")
@@ -30,25 +32,31 @@ class Karakter:
     def fejlesztes(self):
         while True:
             print("\n---Fejlesztés---")
-            print("1 = Életerő növelés (+200 HP) - 100 pénz")
-            print("2 = Sebzés növelés (+30) - 100 pénz")
+            print(f"1 = Életerő növelés (+200 HP) - {self.hp_ar} pénz")
+            print(f"2 = Sebzés növelés (+30) - {self.sebzes_ar} pénz")
             print("3 = Vissza")
 
             val = input("Válassz: ")
 
             if val == "1":
-                if self.penz >= 100:
+                if self.penz >= self.hp_ar:
+                    self.penz -= self.hp_ar
                     self.max_eletero += 200
                     self.eletero = self.max_eletero
-                    self.penz -= 100
+
+                    self.hp_ar += 10  # 🔥 ár növelése
+
                     print("❤️ Életerő növelve!")
                 else:
                     print("Nincs elég pénzed!")
 
             elif val == "2":
-                if self.penz >= 100:
+                if self.penz >= self.sebzes_ar:
+                    self.penz -= self.sebzes_ar
                     self.sebzes += 30
-                    self.penz -= 100
+
+                    self.sebzes_ar += 10  # 🔥 ár növelése
+
                     print("⚔️ Sebzés növelve!")
                 else:
                     print("Nincs elég pénzed!")
