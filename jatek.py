@@ -122,7 +122,7 @@ def harc(jatekos, ellenfel):
             print("\n💀 Meghaltál!")
             return False
 
-        input("➡️ ENTER a következő körhöz...")
+        input("Nyomj ENTERT a következő körhöz...")
         kor += 1
 
 
