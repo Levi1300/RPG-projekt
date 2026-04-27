@@ -23,34 +23,40 @@ class Karakter:
         if self.penz >= 50:
             self.eletero = self.max_eletero
             self.penz -= 50
-            print("💚 Teljes gyógyítás!")
+            print("💚 Teljesen meggyógyultál!")
         else:
             print("Nincs elég pénzed!")
 
     def fejlesztes(self):
-        print("\n---Fejlesztés---")
-        print("1 = Életerő növelés (100 pénz)")
-        print("2 = Sebzés növelés (100 pénz)")
-        print("3 = Vissza")
+        while True:
+            print("\n---Fejlesztés---")
+            print("1 = Életerő növelés (+200 HP) - 100 pénz")
+            print("2 = Sebzés növelés (+30) - 100 pénz")
+            print("3 = Vissza")
 
-        val = input("Válassz: ")
+            val = input("Válassz: ")
 
-        if val == "1":
-            if self.penz >= 100:
-                self.max_eletero += 200
-                self.eletero = self.max_eletero
-                self.penz -= 100
-                print("❤️ Életerő növelve!")
+            if val == "1":
+                if self.penz >= 100:
+                    self.max_eletero += 200
+                    self.eletero = self.max_eletero
+                    self.penz -= 100
+                    print("❤️ Életerő növelve!")
+                else:
+                    print("Nincs elég pénzed!")
+
+            elif val == "2":
+                if self.penz >= 100:
+                    self.sebzes += 30
+                    self.penz -= 100
+                    print("⚔️ Sebzés növelve!")
+                else:
+                    print("Nincs elég pénzed!")
+
+            elif val == "3":
+                break
             else:
-                print("Nincs elég pénzed!")
-
-        elif val == "2":
-            if self.penz >= 100:
-                self.sebzes += 30
-                self.penz -= 100
-                print("⚔️ Sebzés növelve!")
-            else:
-                print("Nincs elég pénzed!")
+                print("Hibás választás!")
 
 
 class Ellenfel:
@@ -60,7 +66,7 @@ class Ellenfel:
         self.tamadas = tamadas
 
 
-# Ellenfél sablonok
+# Ellenfél sablonok (nem példányok!)
 ellenfel_adatok = [
     ("Csontváz", 500, 50),
     ("Zombi", 800, 80),
@@ -74,12 +80,13 @@ boss_adat = ("Sötét Lovag", 5000, 300)
 
 def uj_ellenfel():
     i = randint(0, len(ellenfel_adatok) - 1)
-    adat = ellenfel_adatok[i]
-    return Ellenfel(adat[0], adat[1], adat[2])
+    nev, elet, tamadas = ellenfel_adatok[i]
+    return Ellenfel(nev, elet, tamadas)
 
 
 def uj_boss():
-    return Ellenfel(boss_adat[0], boss_adat[1], boss_adat[2])
+    nev, elet, tamadas = boss_adat
+    return Ellenfel(nev, elet, tamadas)
 
 
 def harc(jatekos, ellenfel):
@@ -100,7 +107,7 @@ def harc(jatekos, ellenfel):
         sebzes = max(0, randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20))
         jatekos.eletero -= sebzes
         print(f"{ellenfel.neve} támad: {sebzes}")
-        print(f"HP: {jatekos.eletero}")
+        print(f"HP: {max(0, jatekos.eletero)}")
 
         if jatekos.eletero <= 0:
             print("💀 Meghaltál!")
@@ -167,8 +174,8 @@ while True:
         jatek(karakter)
 
     elif bemenet == "2":
-        print("\nEz egy fejlesztett RPG játék Pythonban.")
-        print("Harcolj, fejlessz és győzd le a bosst!")
+        print("\nEz egy RPG játék fejlesztés rendszerrel.")
+        print("Menj a '4 = Fejlesztés' menübe játék közben!")
 
     elif bemenet == "3":
         print("Kilépés...")
