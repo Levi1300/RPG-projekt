@@ -106,7 +106,7 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
-            jatekos.penz += randint(30, 250)
+            jatekos.penz += (randint(30, 250))
             jatekos.szint += 1
             return True
 
