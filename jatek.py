@@ -22,7 +22,7 @@ class Karakter:
         print(f"Pénz: {self.penz}")
 
     def gyogyitas(self):
-        print(f"\n💚 Gyógyítás (1 pénz = 10 HP)")
+        print(f"\n💚 Gyógyítás (1 pénz = 5 HP)")
         print(f"Jelenlegi HP: {self.eletero}/{self.max_eletero}")
         print(f"Pénzed: {self.penz}")
 
@@ -44,7 +44,7 @@ class Karakter:
             print("Nincs ennyi pénzed!")
             return
 
-        gyogyitas = koltes * 10
+        gyogyitas = koltes * 5
         self.eletero += gyogyitas
 
         # ne mehessen max fölé
