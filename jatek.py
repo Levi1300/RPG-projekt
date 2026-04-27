@@ -91,27 +91,39 @@ def uj_boss():
 
 def harc(jatekos, ellenfel):
     print(f"\n⚔️ Harc indul! Ellenfél: {ellenfel.neve}")
+    input("Nyomj ENTER-t a kezdéshez...")
+
+    kor = 1
 
     while jatekos.eletero > 0 and ellenfel.elet > 0:
+        print(f"\n--- {kor}. kör ---")
 
+        # játékos támad
         sebzes = max(0, randint(jatekos.sebzes - 20, jatekos.sebzes + 20))
         ellenfel.elet -= sebzes
-        print(f"Te támadsz: {sebzes}")
+        print(f"🧍 Te támadsz: {sebzes} sebzés")
+        print(f"{ellenfel.neve} HP: {max(0, ellenfel.elet)}")
 
         if ellenfel.elet <= 0:
-            print(f"Legyőzted: {ellenfel.neve}!")
+            print(f"\n✅ Legyőzted: {ellenfel.neve}!")
             jatekos.penz += 100
             jatekos.szint += 1
             return True
 
+        input("➡️ ENTER a folytatáshoz...")
+
+        # ellenfél támad
         sebzes = max(0, randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20))
         jatekos.eletero -= sebzes
-        print(f"{ellenfel.neve} támad: {sebzes}")
-        print(f"HP: {max(0, jatekos.eletero)}")
+        print(f"👹 {ellenfel.neve} támad: {sebzes} sebzés")
+        print(f"❤️ HP-d: {max(0, jatekos.eletero)}")
 
         if jatekos.eletero <= 0:
-            print("💀 Meghaltál!")
+            print("\n💀 Meghaltál!")
             return False
+
+        input("➡️ ENTER a következő körhöz...")
+        kor += 1
 
 
 def jatek(jatekos):
