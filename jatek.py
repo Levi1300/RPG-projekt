@@ -102,7 +102,7 @@ def harc(jatekos, ellenfel):
         sebzes = max(0, randint(jatekos.sebzes - 20, jatekos.sebzes + 20))
         ellenfel.elet -= sebzes
         print(f"🧍 Te támadsz: {sebzes} sebzés")
-        print(f"{ellenfel.neve} HP: {max(0, ellenfel.elet)}")
+        print(f"{ellenfel.neve} HP: {max(0, ellenfel.elet)}\n")
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
@@ -110,7 +110,7 @@ def harc(jatekos, ellenfel):
             jatekos.szint += 1
             return True
 
-        input("➡️ ENTER a folytatáshoz...")
+        input("Nyomj ENTERT a folytatáshoz...\n")
 
         # ellenfél támad
         sebzes = max(0, randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20))
