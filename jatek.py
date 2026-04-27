@@ -22,12 +22,39 @@ class Karakter:
         print(f"Pénz: {self.penz}")
 
     def gyogyitas(self):
-        if self.penz >= 50:
+        print(f"\n💚 Gyógyítás (1 pénz = 10 HP)")
+        print(f"Jelenlegi HP: {self.eletero}/{self.max_eletero}")
+        print(f"Pénzed: {self.penz}")
+
+        if self.penz <= 0:
+            print("Nincs pénzed!")
+            return
+
+        try:
+            koltes = int(input("Mennyit költesz gyógyításra?: "))
+        except:
+            print("Hibás szám!")
+            return
+
+        if koltes <= 0:
+            print("Adj meg pozitív számot!")
+            return
+
+        if koltes > self.penz:
+            print("Nincs ennyi pénzed!")
+            return
+
+        gyogyitas = koltes * 10
+        self.eletero += gyogyitas
+
+        # ne mehessen max fölé
+        if self.eletero > self.max_eletero:
             self.eletero = self.max_eletero
-            self.penz -= 50
-            print("💚 Teljesen meggyógyultál!")
-        else:
-            print("Nincs elég pénzed!")
+
+        self.penz -= koltes
+
+        print(f"💚 Gyógyultál: {gyogyitas} HP-t")
+        print(f"Új HP: {self.eletero}/{self.max_eletero}")
 
     def fejlesztes(self):
         while True:
