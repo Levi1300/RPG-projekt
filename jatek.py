@@ -66,7 +66,7 @@ class Ellenfel:
         self.tamadas = tamadas
 
 
-# Ellenfél sablonok (nem példányok!)
+
 ellenfel_adatok = [
     ("Csontváz", 500, 50),
     ("Zombi", 800, 80),
@@ -159,7 +159,7 @@ def jatek(jatekos):
             print("Hibás választás!")
 
 
-# Főmenü
+
 while True:
     print("\n---Főmenü---")
     print("1 = Kezdés")
