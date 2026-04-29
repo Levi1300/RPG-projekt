@@ -74,7 +74,7 @@ class Karakter:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
                     self.sebzes_ar += 15
-                    print(f"⚔️ Sebzés növelve! Új ár: {self.penz}")
+                    print(f"⚔️ Sebzés növelve! Pénzed: {self.penz}")
                 else:
                     print("Nincs elég pénzed!")
 
