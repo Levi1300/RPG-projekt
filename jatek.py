@@ -65,7 +65,11 @@ class Karakter:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
                     self.hp_ar += 15
+<<<<<<< HEAD
                     print(f"❤️ Életerő növelve! Új ár: {self.hp_ar}")
+=======
+                    print(f"❤️ Életerő növelve! pénzed: {self.penz}")
+>>>>>>> a357ca52c0136771632c20e398defd554ee37d36
                 else:
                     print("Nincs elég pénzed!")
 
@@ -74,7 +78,11 @@ class Karakter:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
                     self.sebzes_ar += 15
+<<<<<<< HEAD
                     print(f"⚔️ Sebzés növelve! Új ár: {self.sebzes_ar}")
+=======
+                    print(f"⚔️ Sebzés növelve! Pénzed: {self.penz}")
+>>>>>>> a357ca52c0136771632c20e398defd554ee37d36
                 else:
                     print("Nincs elég pénzed!")
 
@@ -152,7 +160,11 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
+<<<<<<< HEAD
             jatekos.penz += randint(200, 600)
+=======
+            jatekos.penz += randint(150, 450)
+>>>>>>> a357ca52c0136771632c20e398defd554ee37d36
             jatekos.szint += 1
             return True
 
