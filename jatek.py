@@ -178,7 +178,7 @@ def jatek(jatekos):
             if legyozott == 15:
                 boss = uj_boss()
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a BOSST! A jutalmad 1500$")
+                    print("\n🏆 Megölted a SÖTÉT LOVAGOT! A jutalmad 1500$")
                     jatekos.penz += 1500  
             else:
                 ellenfel = uj_ellenfel()
