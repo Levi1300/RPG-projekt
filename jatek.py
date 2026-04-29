@@ -107,7 +107,8 @@ ellenfel_adatok = [
     ("Zombi", 800, 80),
     ("Ork", 1200, 120),
     ("Bandita", 900, 100),
-    ("Óriáspók", 700, 90)
+    ("Óriáspók", 700, 90),
+    ("Goblin", 450, 70)
 ]
 
 boss1_adatok = ("Sötét Lovag", 5000, 300)
@@ -182,7 +183,7 @@ def jatek(jatekos):
             if legyozott == 15:
                 boss = uj_boss1()
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a BOSST! A jutalmad 1500$")
+                    print("\n🏆 Megölted a SÖTÉT LOVAGOT! A jutalmad 1500$")
                     jatekos.penz += 1500  
             else:
                 ellenfel = uj_ellenfel()
