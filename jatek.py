@@ -54,6 +54,7 @@ class Karakter:
     def fejlesztes(self):
         while True:
             print("\n---Fejlesztés---")
+            print(f"Összes pénzed: {self.penz}$")
             print(f"1 = Életerő növelés (+200 HP) - {self.hp_ar} pénz")
             print(f"2 = Sebzés növelés (+30) - {self.sebzes_ar} pénz")
             print("3 = Vissza")
@@ -65,7 +66,11 @@ class Karakter:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
                     self.hp_ar += 15
+<<<<<<< HEAD
                     print(f"❤️ Életerő növelve! Új ár: {self.hp_ar}")
+=======
+                    print(f"❤️ Életerő növelve! Pénzed: {self.penz}$")
+>>>>>>> 19a11b169a4d9121d200b5eb2a8221587c32cdcc
                 else:
                     print("Nincs elég pénzed!")
 
@@ -74,7 +79,11 @@ class Karakter:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
                     self.sebzes_ar += 15
+<<<<<<< HEAD
                     print(f"⚔️ Sebzés növelve! Új ár: {self.sebzes_ar}")
+=======
+                    print(f"⚔️ Sebzés növelve! Pénzed: {self.penz}$")
+>>>>>>> 19a11b169a4d9121d200b5eb2a8221587c32cdcc
                 else:
                     print("Nincs elég pénzed!")
 
