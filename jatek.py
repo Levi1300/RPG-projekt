@@ -3,7 +3,7 @@ from random import randint
 print("\n---RPG Projekt---")
 
 class Karakter:
-    def __init__(self, nev, eletero, sebzes, szint, penz,):
+    def __init__(self, nev, eletero, sebzes, szint, penz):
         self.nev = nev
         self.max_eletero = eletero
         self.eletero = eletero
@@ -47,7 +47,6 @@ class Karakter:
         gyogyitas = koltes * 5
         self.eletero += gyogyitas
 
-        # ne mehessen max fölé
         if self.eletero > self.max_eletero:
             self.eletero = self.max_eletero
 
@@ -69,9 +68,7 @@ class Karakter:
                 if self.penz >= self.hp_ar:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
-
-                    self.hp_ar += 10  # ár növelése
-
+                    self.hp_ar += 10
                     print(f"❤️ Életerő növelve! Új ár: {self.hp_ar}")
                 else:
                     print("Nincs elég pénzed!")
@@ -80,16 +77,13 @@ class Karakter:
                 if self.penz >= self.sebzes_ar:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
-
-                    self.sebzes_ar += 10  # ár növelése
-
+                    self.sebzes_ar += 10
                     print(f"⚔️ Sebzés növelve! Új ár: {self.sebzes_ar}")
                 else:
                     print("Nincs elég pénzed!")
 
             elif val == "3":
                 break
-
             else:
                 print("Hibás választás!")
 
@@ -101,7 +95,6 @@ class Ellenfel:
         self.tamadas = tamadas
 
 
-
 ellenfel_adatok = [
     ("Csontváz", 500, 50),
     ("Zombi", 800, 80),
@@ -111,8 +104,9 @@ ellenfel_adatok = [
     ("Goblin", 450, 70)
 ]
 
-boss1_adatok = ("Sötét Lovag", 5000, 300)
-boss2_adatok = ("Boss2", 10000, 600)
+boss_adatok = ("Sötét Lovag", 5000, 300)
+boss2_adatok = ("Tűz Sárkány", 9000, 450)
+
 
 def uj_ellenfel():
     i = randint(0, len(ellenfel_adatok) - 1)
@@ -120,12 +114,13 @@ def uj_ellenfel():
     return Ellenfel(nev, elet, tamadas)
 
 
-def uj_boss1():
-    nev, elet, tamadas = boss1_adatok,
+def uj_boss():
+    nev, elet, tamadas = boss_adatok
     return Ellenfel(nev, elet, tamadas)
 
+
 def uj_boss2():
-    nev, elet, tamadas = boss2_adatok,
+    nev, elet, tamadas = boss2_adatok
     return Ellenfel(nev, elet, tamadas)
 
 
@@ -138,7 +133,6 @@ def harc(jatekos, ellenfel):
     while jatekos.eletero > 0 and ellenfel.elet > 0:
         print(f"\n--- {kor}. kör ---")
 
-        # játékos támad
         sebzes = max(0, randint(jatekos.sebzes - 20, jatekos.sebzes + 20))
         ellenfel.elet -= sebzes
         print(f"🧍 Te támadsz: {sebzes} sebzés")
@@ -146,13 +140,12 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
-            jatekos.penz += (randint(150,450))
+            jatekos.penz += randint(150, 450)
             jatekos.szint += 1
             return True
 
         input("Nyomj ENTERT a folytatáshoz...\n")
 
-        # ellenfél támad
         sebzes = max(0, randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20))
         jatekos.eletero -= sebzes
         print(f"👹 {ellenfel.neve} támad: {sebzes} sebzés")
@@ -180,24 +173,21 @@ def jatek(jatekos):
         valasztas = input("Válassz: ")
 
         if valasztas == "1":
-            if legyozott == 15:
-                boss = uj_boss1()
-                if harc(jatekos, boss):
-                    print("\n🏆 Megölted a SÖTÉT LOVAGOT! A jutalmad 1500$")
-                    jatekos.penz += 1500  
-            else:
-                ellenfel = uj_ellenfel()
-                if harc(jatekos, ellenfel):
-                    legyozott += 1
-                else:
-                    break
 
-        if valasztas == "1":
-            if legyozott == 30:
+            if legyozott == 15:
+                boss = uj_boss()
+                if harc(jatekos, boss):
+                    print("\n🏆 Megölted a SÖTÉT LOVAGOT! Jutalom: 1500$")
+                    jatekos.penz += 1500
+                    legyozott += 1
+
+            elif legyozott == 30:
                 boss = uj_boss2()
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a BOSST! A jutalmad 3000$")
-                    jatekos.penz += 3000  
+                    print("\n🐉 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
+                    jatekos.penz += 3000
+                    legyozott += 1
+
             else:
                 ellenfel = uj_ellenfel()
                 if harc(jatekos, ellenfel):
@@ -220,7 +210,6 @@ def jatek(jatekos):
 
         else:
             print("Hibás választás!")
-
 
 
 while True:
