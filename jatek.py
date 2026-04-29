@@ -110,7 +110,8 @@ ellenfel_adatok = [
     ("Óriáspók", 700, 90)
 ]
 
-boss_adatok = ("Sötét Lovag", 5000, 300)
+boss1_adatok = ("Sötét Lovag", 5000, 300)
+boss2_adatok = ("Boss2", 10000, 600)
 
 def uj_ellenfel():
     i = randint(0, len(ellenfel_adatok) - 1)
@@ -118,8 +119,12 @@ def uj_ellenfel():
     return Ellenfel(nev, elet, tamadas)
 
 
-def uj_boss():
-    nev, elet, tamadas = boss_adatok
+def uj_boss1():
+    nev, elet, tamadas = boss1_adatok,
+    return Ellenfel(nev, elet, tamadas)
+
+def uj_boss2():
+    nev, elet, tamadas = boss2_adatok,
     return Ellenfel(nev, elet, tamadas)
 
 
@@ -175,10 +180,23 @@ def jatek(jatekos):
 
         if valasztas == "1":
             if legyozott == 15:
-                boss = uj_boss()
+                boss = uj_boss1()
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! A jutalmad 1500$")
                     jatekos.penz += 1500  
+            else:
+                ellenfel = uj_ellenfel()
+                if harc(jatekos, ellenfel):
+                    legyozott += 1
+                else:
+                    break
+
+        if valasztas == "1":
+            if legyozott == 30:
+                boss = uj_boss2()
+                if harc(jatekos, boss):
+                    print("\n🏆 Megölted a BOSST! A jutalmad 3000$")
+                    jatekos.penz += 3000  
             else:
                 ellenfel = uj_ellenfel()
                 if harc(jatekos, ellenfel):
