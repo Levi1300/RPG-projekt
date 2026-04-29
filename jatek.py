@@ -174,6 +174,7 @@ def jatek(jatekos):
 
         if valasztas == "1":
 
+<<<<<<< HEAD
             if legyozott == 15:
                 boss = uj_boss()
                 if harc(jatekos, boss):
@@ -182,6 +183,10 @@ def jatek(jatekos):
                     legyozott += 1
 
             elif legyozott == 30:
+=======
+        if valasztas == "1":
+            if legyozott == 2:
+>>>>>>> 5372fc1194229a7701633750e0e8c01fb9695e6b
                 boss = uj_boss2()
                 if harc(jatekos, boss):
                     print("\n🐉 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
