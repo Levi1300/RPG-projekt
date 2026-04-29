@@ -107,7 +107,8 @@ ellenfel_adatok = [
     ("Zombi", 800, 80),
     ("Ork", 1200, 120),
     ("Bandita", 900, 100),
-    ("Óriáspók", 700, 90)
+    ("Óriáspók", 700, 90),
+    ("Goblin", 450, 70)
 ]
 
 boss_adatok = ("Sötét Lovag", 5000, 300)
