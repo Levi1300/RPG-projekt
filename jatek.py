@@ -50,6 +50,7 @@ class Karakter:
 
         print(f"💚 Gyógyultál: {gyogyitas} HP-t")
         print(f"Új HP: {self.eletero}/{self.max_eletero}")
+        print(f"Maradék pénzed: {self.penz}$")
 
     def fejlesztes(self):
         while True:
