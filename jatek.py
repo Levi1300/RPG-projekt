@@ -69,7 +69,7 @@ class Karakter:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
                     self.hp_ar += 15
-                    print(f"❤️ Életerő növelve! Új ár: {self.hp_ar}")
+                    print(f"❤️ Életerő növelve! pénzed: {self.penz}")
                 else:
                     print("Nincs elég pénzed!")
 
@@ -78,7 +78,7 @@ class Karakter:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
                     self.sebzes_ar += 15
-                    print(f"⚔️ Sebzés növelve! Új ár: {self.sebzes_ar}")
+                    print(f"⚔️ Sebzés növelve! Pénzed: {self.penz}")
                 else:
                     print("Nincs elég pénzed!")
 
