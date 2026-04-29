@@ -187,7 +187,8 @@ def jatek(jatekos):
         print("2 = Karakter adatok")
         print("3 = Gyógyítás")
         print("4 = Fejlesztés")
-        print("5 = Kilépés")
+        print("5 = Gambling")
+        print("6 = Kilépés")
 
         valasztas = input("Válassz: ")
 
@@ -224,6 +225,9 @@ def jatek(jatekos):
             jatekos.fejlesztes()
 
         elif valasztas == "5":
+            pass
+
+        elif valasztas == "6":
             print("Kilépés...")
             break
 
