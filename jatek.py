@@ -45,11 +45,7 @@ class Karakter:
             return
 
         gyogyitas = koltes * 5
-        self.eletero += gyogyitas
-
-        if self.eletero > self.max_eletero:
-            self.eletero = self.max_eletero
-
+        self.eletero = min(self.max_eletero, self.eletero + gyogyitas)
         self.penz -= koltes
 
         print(f"💚 Gyógyultál: {gyogyitas} HP-t")
@@ -68,7 +64,7 @@ class Karakter:
                 if self.penz >= self.hp_ar:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
-                    self.hp_ar += 10
+                    self.hp_ar += 15
                     print(f"❤️ Életerő növelve! Új ár: {self.hp_ar}")
                 else:
                     print("Nincs elég pénzed!")
@@ -77,7 +73,7 @@ class Karakter:
                 if self.penz >= self.sebzes_ar:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
-                    self.sebzes_ar += 10
+                    self.sebzes_ar += 15
                     print(f"⚔️ Sebzés növelve! Új ár: {self.sebzes_ar}")
                 else:
                     print("Nincs elég pénzed!")
@@ -112,14 +108,20 @@ def uj_ellenfel(legyozott):
     i = randint(0, len(ellenfel_adatok) - 1)
     nev, elet, tamadas = ellenfel_adatok[i]
 
-    # erősödés
+    # 🔥 alap skálázás
+    szorzo = 1 + (legyozott // 5) * 0.25   # minden 5 kill után +25%
+
+    elet = int(elet * szorzo)
+    tamadas = int(tamadas * szorzo)
+
+    # 🔥 boss utáni extra buff
     if legyozott >= 15:
-        elet = int(elet * 1.5)
-        tamadas = int(tamadas * 1.5)
+        elet += 500
+        tamadas += 80
 
     if legyozott >= 30:
-        elet = int(elet * 1.5)
-        tamadas = int(tamadas * 1.5)
+        elet += 1500
+        tamadas += 200
 
     return Ellenfel(nev, elet, tamadas)
 
@@ -150,7 +152,7 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
-            jatekos.penz += randint(150, 400)
+            jatekos.penz += randint(200, 600)
             jatekos.szint += 1
             return True
 
