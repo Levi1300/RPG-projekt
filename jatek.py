@@ -193,7 +193,7 @@ def jatek(jatekos):
                     break
 
         if valasztas == "1":
-            if legyozott == 30:
+            if legyozott == 2:
                 boss = uj_boss2()
                 if harc(jatekos, boss):
                     print("\n🏆 Megölted a BOSST! A jutalmad 3000$")
