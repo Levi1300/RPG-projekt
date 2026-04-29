@@ -108,9 +108,19 @@ boss_adatok = ("Sötét Lovag", 5000, 300)
 boss2_adatok = ("Tűz Sárkány", 9000, 450)
 
 
-def uj_ellenfel():
+def uj_ellenfel(legyozott):
     i = randint(0, len(ellenfel_adatok) - 1)
     nev, elet, tamadas = ellenfel_adatok[i]
+
+    # erősödés
+    if legyozott >= 15:
+        elet = int(elet * 1.5)
+        tamadas = int(tamadas * 1.5)
+
+    if legyozott >= 30:
+        elet = int(elet * 1.5)
+        tamadas = int(tamadas * 1.5)
+
     return Ellenfel(nev, elet, tamadas)
 
 
@@ -174,7 +184,6 @@ def jatek(jatekos):
 
         if valasztas == "1":
 
-<<<<<<< HEAD
             if legyozott == 15:
                 boss = uj_boss()
                 if harc(jatekos, boss):
@@ -183,10 +192,6 @@ def jatek(jatekos):
                     legyozott += 1
 
             elif legyozott == 30:
-=======
-        if valasztas == "1":
-            if legyozott == 2:
->>>>>>> 5372fc1194229a7701633750e0e8c01fb9695e6b
                 boss = uj_boss2()
                 if harc(jatekos, boss):
                     print("\n🐉 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
@@ -194,7 +199,7 @@ def jatek(jatekos):
                     legyozott += 1
 
             else:
-                ellenfel = uj_ellenfel()
+                ellenfel = uj_ellenfel(legyozott)
                 if harc(jatekos, ellenfel):
                     legyozott += 1
                 else:
