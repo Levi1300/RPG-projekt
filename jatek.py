@@ -106,17 +106,20 @@ boss_adatok = ("Sötét Lovag", 5000, 300)
 boss2_adatok = ("Tűz Sárkány", 9000, 450)
 
 
+def penz_jutalom(ellenfel):
+    alap = (ellenfel.elet // 10) + (ellenfel.tamadas * 2)
+    bonusz = randint(50, 150)
+    return alap + bonusz
+
+
 def uj_ellenfel(legyozott):
     i = randint(0, len(ellenfel_adatok) - 1)
     nev, elet, tamadas = ellenfel_adatok[i]
 
-    # 🔥 alap skálázás
-    szorzo = 1 + (legyozott // 5) * 0.25   # minden 5 kill után +25%
-
+    szorzo = 1 + (legyozott // 5) * 0.25
     elet = int(elet * szorzo)
     tamadas = int(tamadas * szorzo)
 
-    # 🔥 boss utáni extra buff
     if legyozott >= 15:
         elet += 500
         tamadas += 80
@@ -154,7 +157,9 @@ def harc(jatekos, ellenfel):
 
         if ellenfel.elet <= 0:
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
-            jatekos.penz += randint(200, 600)
+            jutalom = penz_jutalom(ellenfel)
+            jatekos.penz += jutalom
+            print(f"💰 Szerzett pénz: {jutalom}$")
             jatekos.szint += 1
             return True
 
