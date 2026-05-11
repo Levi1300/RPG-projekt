@@ -86,13 +86,17 @@ class Karakter:
                 print("Hibás választás!")
 
     def gambling(self):
-        felrak = input("Mennyi pénzt raksz?: ")
-        self.penz-felrak == self.penz
+        felrak = int(input("Mennyi pénzt raksz?: "))
+        self.penz - felrak == self.penz
         gamblingszam = (randint(1,2))
         print("1: Fej\n2: Írás")
-        sajatszam = input(f"Fej vagy írás?: ")
+        sajatszam = int(input(f"Fej vagy írás?: "))
+        gnyeremeny = felrak*2
         if sajatszam == gamblingszam:
-            self.penz+(felrak*2) == self.penz
+            self.penz + gnyeremeny == self.penz
+            print(f"Nyertél! +{gnyeremeny}$")
+        else:
+            print(f"Vesztettél! maradék összeg: {self.penz}$")
 
         
 
@@ -235,7 +239,7 @@ def jatek(jatekos):
             jatekos.fejlesztes()
 
         elif valasztas == "5":
-            jatekos
+            jatekos.gambling()
             
         elif valasztas == "6":
             print("Kilépés...")
