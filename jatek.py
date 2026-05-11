@@ -87,6 +87,7 @@ class Karakter:
 
     def gambling(self):
         felrak = int(input("Mennyi pénzt raksz?: "))
+        print(f"Pénzed: {self.penz}$")
         self.penz = (self.penz - felrak)
         gamblingszam = (randint(1,2))
         print("1: Fej\n2: Írás")
