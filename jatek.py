@@ -87,7 +87,6 @@ class Karakter:
 
     def gambling(self):
         felrak = int(input("Mennyi pénzt raksz?: "))
-        print(f"Pénzed: {self.penz}$")
         self.penz = (self.penz - felrak)
         gamblingszam = (randint(1,2))
         print("1: Fej\n2: Írás")
@@ -119,6 +118,7 @@ ellenfel_adatok = [
 
 boss_adatok = ("Sötét Lovag", 5000, 300)
 boss2_adatok = ("Tűz Sárkány", 9000, 450)
+boss3_adatok = ("A Mocsári Rém", 14000, 600)
 
 
 def penz_jutalom(ellenfel):
@@ -153,6 +153,10 @@ def uj_boss():
 
 def uj_boss2():
     nev, elet, tamadas = boss2_adatok
+    return Ellenfel(nev, elet, tamadas)
+
+def uj_boss3():
+    nev, elet, tamadas = boss3_adatok
     return Ellenfel(nev, elet, tamadas)
 
 
@@ -221,6 +225,13 @@ def jatek(jatekos):
                 if harc(jatekos, boss):
                     print("\n🐉 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
                     jatekos.penz += 3000
+                    legyozott += 1
+            
+            elif legyozott == 50:
+                boss = uj_boss3()
+                if harc(jatekos, boss):
+                    print("\n🐉 Megölted a MOCSÁRI RÉMET! Jutalom: 5000$")
+                    jatekos.penz += 5000
                     legyozott += 1
 
             else:
