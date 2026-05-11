@@ -105,7 +105,6 @@ class Karakter:
             print("1 = pénz addolás")
             print("2 = sebzes növelés")
             print("3 = hp növelés")
-            print("4 = Boss kiválasztása")
             parancsvalasztas = int(input("Válassz!"))
             if parancsvalasztas == 1:
                 penzadd = int(input("Mennyi pénzt szeretnél addolni?"))
@@ -118,11 +117,6 @@ class Karakter:
             if parancsvalasztas == 3:
                 hpadd = int(input("Mennyi HP-t szeretnél addolni?"))
                 self.eletero = (self.eletero + hpadd)
-
-            if parancsvalasztas == 4:
-                bossadd = int(input("Melyik bosshoz akarsz menni?"))
-                print(f"15 = Sötét Lovag\n30 = Tűz Sárkány\n50 = Mocsári Rém")
-                legyozott = bossadd
         else:
             print("Rossz jelszó!")
             
