@@ -264,7 +264,7 @@ while True:
 
     elif bemenet == "2":
         print("\nEz egy RPG játék fejlesztés rendszerrel.")
-        print("Menj a '4 = Fejlesztés' menübe játék közben!")
+        print("Harcolj, fejleszd magad és győzd le a bossokat!")
         print("készítette: Öskü Levente, Máté Szabolcs")
 
     elif bemenet == "3":
