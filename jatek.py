@@ -87,16 +87,23 @@ class Karakter:
 
     def gambling(self):
         felrak = int(input("Mennyi pénzt raksz?: "))
+<<<<<<< HEAD
         self.penz == (self.penz - felrak)
+=======
+        self.penz-felrak == self.penz
+>>>>>>> 664a21f01456e735fe12348d43273d85f5d4a19d
         gamblingszam = (randint(1,2))
         print("1: Fej\n2: Írás")
         sajatszam = int(input(f"Fej vagy írás?: "))
-        gnyeremeny = felrak*2
         if sajatszam == gamblingszam:
+<<<<<<< HEAD
             self.penz == (self.penz + gnyeremeny) 
             print(f"Nyertél! +{gnyeremeny}$")
+=======
+            print("Nyertél!") and felrak*2+self.penz == self.penz
+>>>>>>> 664a21f01456e735fe12348d43273d85f5d4a19d
         else:
-            print(f"Vesztettél! maradék összeg: {self.penz}$")
+            print(f"A szám {gamblingszam} volt")
 
         
 
