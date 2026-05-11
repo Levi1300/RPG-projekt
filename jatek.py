@@ -88,6 +88,7 @@ class Karakter:
 
     def gambling(self):
         felrak = int(input("Mennyi pénzt raksz?: "))
+<<<<<<< HEAD
 
         if felrak <= 0:
             print("Hibás összeg!")
@@ -109,8 +110,22 @@ class Karakter:
         if sajatszam == gamblingszam:
             self.penz += gnyeremeny
             print(f"Nyertél! +{gnyeremeny}$")
+=======
+        if self.penz >= felrak:
+            self.penz = (self.penz - felrak)
+            gamblingszam = (randint(1,2))
+            print("1: Fej\n2: Írás")
+            sajatszam = int(input(f"Fej vagy írás?: "))
+            gnyeremeny = felrak*2
+            if sajatszam == gamblingszam:
+                self.penz = (self.penz + gnyeremeny) 
+                print(f"Nyertél! +{gnyeremeny}$")
+            else:
+                print(f"Vesztettél! Maradék összeg : {self.penz}$")
+>>>>>>> cebef7d59b75f27711fdeeacb1f5108834b98e50
         else:
-            print(f"Vesztettél! Maradék összeg : {self.penz}$")
+            print("Hibás összeg!")
+        
 
     def parancsok(self):
         bevitel = input("Add meg a jelszót!")
@@ -120,7 +135,10 @@ class Karakter:
             print("1 = pénz addolás")
             print("2 = sebzes növelés")
             print("3 = hp növelés")
+<<<<<<< HEAD
 
+=======
+>>>>>>> cebef7d59b75f27711fdeeacb1f5108834b98e50
             parancsvalasztas = int(input("Válassz!"))
 
             if parancsvalasztas == 1:
@@ -133,8 +151,12 @@ class Karakter:
 
             if parancsvalasztas == 3:
                 hpadd = int(input("Mennyi HP-t szeretnél addolni?"))
+<<<<<<< HEAD
                 self.eletero += hpadd
 
+=======
+                self.eletero = (self.eletero + hpadd)
+>>>>>>> cebef7d59b75f27711fdeeacb1f5108834b98e50
         else:
             print("Rossz jelszó!")
 
