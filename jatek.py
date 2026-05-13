@@ -333,6 +333,9 @@ def jatek(jatekos):
                     jatekos.penz += 10000
                     legyozott += 1
 
+            elif uj_boss4 == legyozott:
+                print("Nyertél! 🏆")
+
             else:
                 ellenfel = uj_ellenfel(legyozott)
 
