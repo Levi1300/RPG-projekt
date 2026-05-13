@@ -189,6 +189,7 @@ ellenfel_adatok = [
     ("Hegyi Gólem", 1000, 100),
     ("Fekete Mágus", 550, 60),
     ("Iszapjáró", 600, 55)
+
 ]
 
 boss_adatok = ("Sötét Lovag", 5000, 300)
@@ -305,6 +306,9 @@ def jatek(jatekos):
 
         if valasztas == "1":
 
+            if legyozott == 14:
+                print("Ez után a Sötét Lovag következik...")
+
             if legyozott == 15:
                 boss = uj_boss()
 
@@ -312,6 +316,9 @@ def jatek(jatekos):
                     print("\n🏆 Megölted a SÖTÉT LOVAGOT! Jutalom: 1500$")
                     jatekos.penz += 1500
                     legyozott += 1
+
+            if legyozott == 29:
+                print("Ez után a Tűz Sárkány következik...")
 
             elif legyozott == 30:
                 boss = uj_boss2()
@@ -321,6 +328,9 @@ def jatek(jatekos):
                     jatekos.penz += 3000
                     legyozott += 1
 
+            if legyozott == 49:
+                print("Ez után a Mocsári Rém következik...")
+
             elif legyozott == 50:
                 boss = uj_boss3()
 
@@ -329,6 +339,9 @@ def jatek(jatekos):
                     jatekos.penz += 5000
                     legyozott += 1
 
+            if legyozott == 99:
+                print("Ez után az Örök Sötétség Ura következik...")
+
             elif legyozott == 100:
                 boss = uj_boss4()
 
@@ -336,6 +349,9 @@ def jatek(jatekos):
                     print("\n🏆 Megölted az ÖRÖK SÖTÉTSÉG URÁT! Jutalom: 10000$")
                     jatekos.penz += 10000
                     legyozott += 1
+
+            elif uj_boss4 == legyozott:
+                print("Nyertél! 🏆")
 
             else:
                 ellenfel = uj_ellenfel(legyozott)
