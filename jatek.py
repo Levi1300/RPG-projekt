@@ -110,7 +110,7 @@ class Karakter:
             self.penz += gnyeremeny
             print(f"Nyertél! +{gnyeremeny}$")
         else:
-            print("Hibás összeg!")
+            print(f"Vesztettél! Maradék pénzed: {self.penz}")
         
 
     def parancsok(self):
