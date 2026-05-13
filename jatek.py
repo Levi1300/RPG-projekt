@@ -462,10 +462,10 @@ def jatek(jatekos):
             jatekos.parancsok()
 
         elif valasztas == "7":
-            jatekos.mentes()
+            jatekos.mentes(legyozott)
 
         elif valasztas == "8":
-            jatekos.betoltes()
+            legyozott = jatekos.betoltes()
 
         elif valasztas == "9":
             print("Kilépés...")
