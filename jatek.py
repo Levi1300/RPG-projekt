@@ -306,6 +306,9 @@ def jatek(jatekos):
 
         if valasztas == "1":
 
+            if legyozott == 14:
+                print("Ez után a Sötét Lovag következik...")
+
             if legyozott == 15:
                 boss = uj_boss()
 
@@ -313,6 +316,9 @@ def jatek(jatekos):
                     print("\n🏆 Megölted a SÖTÉT LOVAGOT! Jutalom: 1500$")
                     jatekos.penz += 1500
                     legyozott += 1
+
+            if legyozott == 29:
+                print("Ez után a Tűz Sárkány következik...")
 
             elif legyozott == 30:
                 boss = uj_boss2()
@@ -322,6 +328,9 @@ def jatek(jatekos):
                     jatekos.penz += 3000
                     legyozott += 1
 
+            if legyozott == 49:
+                print("Ez után a Mocsári Rém következik...")
+
             elif legyozott == 50:
                 boss = uj_boss3()
 
@@ -329,6 +338,9 @@ def jatek(jatekos):
                     print("\n🏆 Megölted a MOCSÁRI RÉMET! Jutalom: 5000$")
                     jatekos.penz += 5000
                     legyozott += 1
+
+            if legyozott == 99:
+                print("Ez után az Örök Sötétség Ura következik...")
 
             elif legyozott == 100:
                 boss = uj_boss4()
