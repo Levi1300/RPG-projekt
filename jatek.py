@@ -194,7 +194,7 @@ class Karakter:
             fajl.write(str(self.sebzes_ar) + "\n")
             fajl.write(str(legyozott) + "\n")
 
-    print("💾 Játék elmentve!")
+        print("💾 Játék elmentve!")
 
     def betoltes(self):
         try:
