@@ -398,7 +398,7 @@ def jatek(jatekos):
                 boss = uj_boss()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Legyőzted a SÖTÉT LOVAGOT!")
+                    print("\n🏆 Legyőzted a SÖTÉT LOVAGOT! Jutalom: 1500$")
                     jatekos.penz += 1500
                     legyozott += 1
 
@@ -409,7 +409,7 @@ def jatek(jatekos):
                 boss = uj_boss2()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Legyőzted a TŰZ SÁRKÁNYT!")
+                    print("\n🏆 Legyőzted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
                     jatekos.penz += 3000
                     legyozott += 1
 
@@ -420,7 +420,7 @@ def jatek(jatekos):
                 boss = uj_boss3()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Legyőzted a MOCSÁRI RÉMET!")
+                    print("\n🏆 Legyőzted a MOCSÁRI RÉMET! Jutalom: 5000$")
                     jatekos.penz += 5000
                     legyozott += 1
 
@@ -432,7 +432,7 @@ def jatek(jatekos):
 
                 if harc(jatekos, boss):
 
-                    print("\n🏆 Legyőzted AZ ÖRÖK SÖTÉTSÉG URÁT!")
+                    print("\n🏆 Legyőzted AZ ÖRÖK SÖTÉTSÉG URÁT! Jutalom: 10000$")
                     print("🔥 A játék folytatódik!")
 
                     jatekos.penz += 10000
@@ -440,7 +440,6 @@ def jatek(jatekos):
 
                 continue
 
-            # Normál harc
             ellenfel = uj_ellenfel(legyozott)
 
             if harc(jatekos, ellenfel):
