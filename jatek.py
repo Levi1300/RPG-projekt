@@ -2,6 +2,7 @@ from random import randint
 
 print("\n---RPG Projekt---")
 
+
 class Karakter:
     def __init__(self, nev, eletero, sebzes, szint, penz):
         self.nev = nev
@@ -19,12 +20,12 @@ class Karakter:
         print(f"Életerő: {self.eletero}/{self.max_eletero}")
         print(f"Sebzés: {self.sebzes}")
         print(f"Szint: {self.szint}")
-        print(f"Pénz: {self.penz}")
+        print(f"Pénz: {self.penz}$")
 
     def gyogyitas(self):
         print(f"\n💚 Gyógyítás (1 pénz = 5 HP)")
         print(f"Jelenlegi HP: {self.eletero}/{self.max_eletero}")
-        print(f"Pénzed: {self.penz}")
+        print(f"Pénzed: {self.penz}$")
 
         if self.penz <= 0:
             print("Nincs pénzed!")
@@ -45,7 +46,12 @@ class Karakter:
             return
 
         gyogyitas = koltes * 5
-        self.eletero = min(self.max_eletero, self.eletero + gyogyitas)
+
+        self.eletero = min(
+            self.max_eletero,
+            self.eletero + gyogyitas
+        )
+
         self.penz -= koltes
 
         print(f"💚 Gyógyultál: {gyogyitas} HP-t")
@@ -56,39 +62,51 @@ class Karakter:
         while True:
             print("\n---Fejlesztés---")
             print(f"Összes pénzed: {self.penz}$")
-            print(f"1 = Életerő növelés (+200 HP) - {self.hp_ar} pénz")
-            print(f"2 = Sebzés növelés (+30) - {self.sebzes_ar} pénz")
+            print(f"1 = Életerő növelés (+200 HP) - {self.hp_ar}$")
+            print(f"2 = Sebzés növelés (+30) - {self.sebzes_ar}$")
             print("3 = Vissza")
 
             val = input("Válassz: ")
 
             if val == "1":
+
                 if self.penz >= self.hp_ar:
                     self.penz -= self.hp_ar
                     self.max_eletero += 200
                     self.eletero += 200
                     self.hp_ar += 15
-                    print(f"❤️ Életerő növelve!")
+
+                    print("❤️ Életerő növelve!")
+
                 else:
                     print("Nincs elég pénzed!")
 
             elif val == "2":
+
                 if self.penz >= self.sebzes_ar:
                     self.penz -= self.sebzes_ar
                     self.sebzes += 30
                     self.sebzes_ar += 15
-                    print(f"⚔️ Sebzés növelve!")
+
+                    print("⚔️ Sebzés növelve!")
+
                 else:
                     print("Nincs elég pénzed!")
 
             elif val == "3":
                 break
+
             else:
                 print("Hibás választás!")
 
     def gambling(self):
-        print(f"Pénzed: {self.penz}$")
-        felrak = int(input("Mennyi pénzt raksz?: "))
+        print(f"\nPénzed: {self.penz}$")
+
+        try:
+            felrak = int(input("Mennyi pénzt raksz?: "))
+        except:
+            print("Hibás szám!")
+            return
 
         if felrak <= 0:
             print("Hibás összeg!")
@@ -100,71 +118,91 @@ class Karakter:
 
         self.penz -= felrak
 
+        print("1 = Fej")
+        print("2 = Írás")
+
+        try:
+            sajatszam = int(input("Válassz: "))
+        except:
+            print("Hibás választás!")
+            return
+
+        if sajatszam not in [1, 2]:
+            print("Hibás választás!")
+            return
+
         gamblingszam = randint(1, 2)
 
-        print("1: Fej\n2: Írás")
-        sajatszam = int(input("Fej vagy írás?: "))
-
-        gnyeremeny = felrak * 2
-
         if sajatszam == gamblingszam:
-            self.penz += gnyeremeny
-            print(f"Nyertél! +{gnyeremeny}$")
+            nyeremeny = felrak * 2
+            self.penz += nyeremeny
+
+            print(f"🎉 Nyertél! +{nyeremeny}$")
+
         else:
-            print(f"Vesztettél! Maradék pénzed: {self.penz}")
-        
+            print(f"❌ Vesztettél! Maradék pénzed: {self.penz}$")
 
     def parancsok(self):
-        bevitel = input("Add meg a jelszót!")
         jelszo = "12345689"
 
-        if bevitel == jelszo:
-            print("1 = pénz addolás")
-            print("2 = sebzes növelés")
-            print("3 = hp növelés")
-            parancsvalasztas = int(input("Válassz!"))
+        bevitel = input("Add meg a jelszót!: ")
 
-            if parancsvalasztas == 1:
-                penzadd = int(input("Mennyi pénzt szeretnél addolni?"))
-                self.penz += penzadd
+        if bevitel != jelszo:
+            print("Rossz jelszó!")
+            return
 
-            if parancsvalasztas == 2:
-                sebzesadd = int(input("Mennyi sebzést szeretnél addolni?"))
-                self.sebzes += sebzesadd
+        print("\n---Parancsok---")
+        print("1 = Pénz addolás")
+        print("2 = Sebzés növelés")
+        print("3 = HP növelés")
 
-            if parancsvalasztas == 3:
-                hpadd = int(input("Mennyi HP-t szeretnél addolni?"))
-                self.eletero += hpadd
+        try:
+            valasztas = int(input("Válassz!: "))
+        except:
+            print("Hibás választás!")
+            return
+
+        if valasztas == 1:
+            penzadd = int(input("Mennyi pénzt?: "))
+            self.penz += penzadd
+
+        elif valasztas == 2:
+            sebzesadd = int(input("Mennyi sebzés?: "))
+            self.sebzes += sebzesadd
+
+        elif valasztas == 3:
+            hpadd = int(input("Mennyi HP?: "))
+            self.max_eletero += hpadd
+            self.eletero += hpadd
 
         else:
-            print("Rossz jelszó!")
+            print("Hibás választás!")
 
     def mentes(self):
-        fajl = open("mentes.txt", "w", encoding="utf-8")
 
-        fajl.write(self.nev + "\n")
-        fajl.write(str(self.eletero) + "\n")
-        fajl.write(str(self.max_eletero) + "\n")
-        fajl.write(str(self.sebzes) + "\n")
-        fajl.write(str(self.szint) + "\n")
-        fajl.write(str(self.penz) + "\n")
+        with open("mentes.txt", "w", encoding="utf-8") as fajl:
 
-        fajl.close()
+            fajl.write(self.nev + "\n")
+            fajl.write(str(self.eletero) + "\n")
+            fajl.write(str(self.max_eletero) + "\n")
+            fajl.write(str(self.sebzes) + "\n")
+            fajl.write(str(self.szint) + "\n")
+            fajl.write(str(self.penz) + "\n")
 
         print("💾 Játék elmentve!")
 
     def betoltes(self):
+
         try:
-            fajl = open("mentes.txt", "r", encoding="utf-8")
 
-            self.nev = fajl.readline().strip()
-            self.eletero = int(fajl.readline())
-            self.max_eletero = int(fajl.readline())
-            self.sebzes = int(fajl.readline())
-            self.szint = int(fajl.readline())
-            self.penz = int(fajl.readline())
+            with open("mentes.txt", "r", encoding="utf-8") as fajl:
 
-            fajl.close()
+                self.nev = fajl.readline().strip()
+                self.eletero = int(fajl.readline())
+                self.max_eletero = int(fajl.readline())
+                self.sebzes = int(fajl.readline())
+                self.szint = int(fajl.readline())
+                self.penz = int(fajl.readline())
 
             print("📂 Mentés betöltve!")
 
@@ -173,6 +211,7 @@ class Karakter:
 
 
 class Ellenfel:
+
     def __init__(self, neve, elet, tamadas):
         self.neve = neve
         self.elet = elet
@@ -190,7 +229,6 @@ ellenfel_adatok = [
     ("Hegyi Gólem", 1000, 100),
     ("Fekete Mágus", 550, 60),
     ("Iszapjáró", 600, 55)
-
 ]
 
 boss_adatok = ("Sötét Lovag", 5000, 300)
@@ -200,16 +238,22 @@ boss4_adatok = ("Az Örök Sötétség Ura", 20000, 1000)
 
 
 def penz_jutalom(ellenfel):
+
     alap = (ellenfel.elet // 10) + (ellenfel.tamadas * 2)
+
     bonusz = randint(50, 150)
+
     return alap + bonusz
 
 
 def uj_ellenfel(legyozott):
+
     i = randint(0, len(ellenfel_adatok) - 1)
+
     nev, elet, tamadas = ellenfel_adatok[i]
 
     szorzo = 1 + (legyozott // 5) * 0.25
+
     elet = int(elet * szorzo)
     tamadas = int(tamadas * szorzo)
 
@@ -221,62 +265,80 @@ def uj_ellenfel(legyozott):
         elet += 1500
         tamadas += 200
 
+    if legyozott >= 50:
+        elet += 3000
+        tamadas += 350
+
+    if legyozott >= 100:
+        elet += 7000
+        tamadas += 700
+
     return Ellenfel(nev, elet, tamadas)
 
 
 def uj_boss():
-    nev, elet, tamadas = boss_adatok
-    return Ellenfel(nev, elet, tamadas)
+    return Ellenfel(*boss_adatok)
 
 
 def uj_boss2():
-    nev, elet, tamadas = boss2_adatok
-    return Ellenfel(nev, elet, tamadas)
+    return Ellenfel(*boss2_adatok)
 
 
 def uj_boss3():
-    nev, elet, tamadas = boss3_adatok
-    return Ellenfel(nev, elet, tamadas)
+    return Ellenfel(*boss3_adatok)
+
 
 def uj_boss4():
-    nev, elet, tamadas = boss4_adatok
-    return Ellenfel(nev, elet, tamadas)
+    return Ellenfel(*boss4_adatok)
 
 
 def harc(jatekos, ellenfel):
+
     print(f"\n⚔️ Harc indul! Ellenfél: {ellenfel.neve}")
+
     input("Nyomj ENTER-t a kezdéshez...")
 
     kor = 1
 
     while jatekos.eletero > 0 and ellenfel.elet > 0:
+
         print(f"\n--- {kor}. kör ---")
 
-        sebzes = max(0, randint(jatekos.sebzes - 20, jatekos.sebzes + 20))
+        sebzes = randint(
+            max(0, jatekos.sebzes - 20),
+            jatekos.sebzes + 20
+        )
+
         ellenfel.elet -= sebzes
 
         print(f"🧍 Te támadsz: {sebzes} sebzés")
-        print(f"{ellenfel.neve} HP: {max(0, ellenfel.elet)}\n")
+        print(f"{ellenfel.neve} HP: {max(0, ellenfel.elet)}")
 
         if ellenfel.elet <= 0:
+
             print(f"\n✅ Legyőzted: {ellenfel.neve}!")
 
             jutalom = penz_jutalom(ellenfel)
+
             jatekos.penz += jutalom
-
-            print(f"💰 Szerzett pénz: {jutalom}$")
-
             jatekos.szint += 1
+
+            print(f"💰 Jutalom: {jutalom}$")
+            print(f"⭐ Szintlépés! Új szint: {jatekos.szint}")
 
             return True
 
-        input("Nyomj ENTERT a folytatáshoz...\n")
+        input("Nyomj ENTERT a folytatáshoz...")
 
-        sebzes = max(0, randint(ellenfel.tamadas - 20, ellenfel.tamadas + 20))
+        sebzes = randint(
+            max(0, ellenfel.tamadas - 20),
+            ellenfel.tamadas + 20
+        )
+
         jatekos.eletero -= sebzes
 
-        print(f"👹 {ellenfel.neve} támad: {sebzes} sebzés")
-        print(f"❤️ HP-d: {max(0, jatekos.eletero)}\n")
+        print(f"\n👹 {ellenfel.neve} támad: {sebzes} sebzés")
+        print(f"❤️ HP-d: {max(0, jatekos.eletero)}")
 
         if jatekos.eletero <= 0:
             print("\n💀 Meghaltál!")
@@ -288,9 +350,14 @@ def harc(jatekos, ellenfel):
 
 
 def jatek(jatekos):
+
     legyozott = 0
 
-    while jatekos.eletero > 0:
+    while True:
+
+        if jatekos.eletero <= 0:
+            print("\n💀 Meghaltál!")
+            break
 
         print("\n---Játék---")
         print("1 = Harc")
@@ -307,60 +374,72 @@ def jatek(jatekos):
 
         if valasztas == "1":
 
+            # Boss figyelmeztetések
             if legyozott == 14:
-                print("Ez után a Sötét Lovag következik...")
+                print("⚠️ Következő harc: Sötét Lovag!")
 
+            elif legyozott == 29:
+                print("⚠️ Következő harc: Tűz Sárkány!")
+
+            elif legyozott == 49:
+                print("⚠️ Következő harc: Mocsári Rém!")
+
+            elif legyozott == 99:
+                print("⚠️ Következő harc: Az Örök Sötétség Ura!")
+
+            # Bossok
             if legyozott == 15:
+
                 boss = uj_boss()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a SÖTÉT LOVAGOT! Jutalom: 1500$")
+                    print("\n🏆 Legyőzted a SÖTÉT LOVAGOT!")
                     jatekos.penz += 1500
                     legyozott += 1
 
-            if legyozott == 29:
-                print("Ez után a Tűz Sárkány következik...")
+                continue
 
             elif legyozott == 30:
+
                 boss = uj_boss2()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
+                    print("\n🏆 Legyőzted a TŰZ SÁRKÁNYT!")
                     jatekos.penz += 3000
                     legyozott += 1
 
-            if legyozott == 49:
-                print("Ez után a Mocsári Rém következik...")
+                continue
 
             elif legyozott == 50:
+
                 boss = uj_boss3()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted a MOCSÁRI RÉMET! Jutalom: 5000$")
+                    print("\n🏆 Legyőzted a MOCSÁRI RÉMET!")
                     jatekos.penz += 5000
                     legyozott += 1
 
-            if legyozott == 99:
-                print("Ez után az Örök Sötétség Ura következik...")
+                continue
 
             elif legyozott == 100:
+
                 boss = uj_boss4()
 
                 if harc(jatekos, boss):
-                    print("\n🏆 Megölted az ÖRÖK SÖTÉTSÉG URÁT! Jutalom: 10000$")
+
+                    print("\n🏆 Legyőzted AZ ÖRÖK SÖTÉTSÉG URÁT!")
+                    print("🔥 A játék folytatódik!")
+
                     jatekos.penz += 10000
                     legyozott += 1
 
-            elif uj_boss4 == legyozott:
-                print("Nyertél! 🏆")
+                continue
 
-            else:
-                ellenfel = uj_ellenfel(legyozott)
+            # Normál harc
+            ellenfel = uj_ellenfel(legyozott)
 
-                if harc(jatekos, ellenfel):
-                    legyozott += 1
-                else:
-                    break
+            if harc(jatekos, ellenfel):
+                legyozott += 1
 
         elif valasztas == "2":
             jatekos.adatok()
@@ -401,16 +480,24 @@ while True:
     bemenet = input("Válassz (1-3): ")
 
     if bemenet == "1":
+
         nev = input("Add meg a hősöd nevét: ")
 
-        karakter = Karakter(nev, 2000, 200, 1, 500)
+        karakter = Karakter(
+            nev,
+            2000,
+            200,
+            1,
+            500
+        )
 
         jatek(karakter)
 
     elif bemenet == "2":
+
         print("\nEz egy RPG játék fejlesztés rendszerrel.")
         print("Harcolj, fejleszd magad és győzd le a bossokat!")
-        print("készítette: Öskü Levente, Máté Szabolcs")
+        print("Készítette: Öskü Levente, Máté Szabolcs")
 
     elif bemenet == "3":
         print("Kilépés...")
