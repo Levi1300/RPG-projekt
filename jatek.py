@@ -190,6 +190,7 @@ ellenfel_adatok = [
 boss_adatok = ("Sötét Lovag", 5000, 300)
 boss2_adatok = ("Tűz Sárkány", 9000, 450)
 boss3_adatok = ("A Mocsári Rém", 14000, 600)
+boss4_adatok = ("Az Örök Sötétség Ura", 20000, 1000)
 
 
 def penz_jutalom(ellenfel):
@@ -229,6 +230,10 @@ def uj_boss2():
 
 def uj_boss3():
     nev, elet, tamadas = boss3_adatok
+    return Ellenfel(nev, elet, tamadas)
+
+def uj_boss4():
+    nev, elet, tamadas = boss4_adatok
     return Ellenfel(nev, elet, tamadas)
 
 
@@ -308,7 +313,7 @@ def jatek(jatekos):
                 boss = uj_boss2()
 
                 if harc(jatekos, boss):
-                    print("\n🐉 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
+                    print("\n🏆 Megölted a TŰZ SÁRKÁNYT! Jutalom: 3000$")
                     jatekos.penz += 3000
                     legyozott += 1
 
@@ -316,8 +321,16 @@ def jatek(jatekos):
                 boss = uj_boss3()
 
                 if harc(jatekos, boss):
-                    print("\n🐉 Megölted a MOCSÁRI RÉMET! Jutalom: 5000$")
+                    print("\n🏆 Megölted a MOCSÁRI RÉMET! Jutalom: 5000$")
                     jatekos.penz += 5000
+                    legyozott += 1
+
+            elif legyozott == 100:
+                boss = uj_boss4()
+
+                if harc(jatekos, boss):
+                    print("\n🏆 Megölted az ÖRÖK SÖTÉTSÉG URÁT! Jutalom: 10000$")
+                    jatekos.penz += 10000
                     legyozott += 1
 
             else:
