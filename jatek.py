@@ -178,7 +178,9 @@ class Karakter:
         else:
             print("Hibás választás!")
 
-    def mentes(self):
+    
+
+    def mentes(self, legyozott):
 
         with open("mentes.txt", "w", encoding="utf-8") as fajl:
 
@@ -188,27 +190,30 @@ class Karakter:
             fajl.write(str(self.sebzes) + "\n")
             fajl.write(str(self.szint) + "\n")
             fajl.write(str(self.penz) + "\n")
+            fajl.write(str(self.hp_ar) + "\n")
+            fajl.write(str(self.sebzes_ar) + "\n")
+            fajl.write(str(legyozott) + "\n")
 
-        print("💾 Játék elmentve!")
+    print("💾 Játék elmentve!")
 
     def betoltes(self):
-
         try:
-
             with open("mentes.txt", "r", encoding="utf-8") as fajl:
-
                 self.nev = fajl.readline().strip()
                 self.eletero = int(fajl.readline())
                 self.max_eletero = int(fajl.readline())
                 self.sebzes = int(fajl.readline())
                 self.szint = int(fajl.readline())
                 self.penz = int(fajl.readline())
+                self.hp_ar = int(fajl.readline())
+                self.sebzes_ar = int(fajl.readline())
+                legyozott = int(fajl.readline())
 
             print("📂 Mentés betöltve!")
-
+            return legyozott
         except:
             print("Nincs mentés!")
-
+            return 0
 
 class Ellenfel:
 
