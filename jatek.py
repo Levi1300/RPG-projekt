@@ -87,6 +87,7 @@ class Karakter:
                 print("Hibás választás!")
 
     def gambling(self):
+        print(f"Pénzed: {self.penz}$")
         felrak = int(input("Mennyi pénzt raksz?: "))
 
         if felrak <= 0:
