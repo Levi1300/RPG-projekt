@@ -184,7 +184,12 @@ ellenfel_adatok = [
     ("Ork", 1200, 120),
     ("Bandita", 900, 100),
     ("Óriáspók", 700, 90),
-    ("Goblin", 450, 70)
+    ("Goblin", 450, 70),
+    ("Vérfarkas", 350, 45),
+    ("Hegyi Gólem", 1000, 100),
+    ("Fekete Mágus", 550, 60),
+    ("Iszapjáró", 600, 55)
+
 ]
 
 boss_adatok = ("Sötét Lovag", 5000, 300)
