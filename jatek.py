@@ -381,16 +381,16 @@ def jatek(jatekos):
 
             # Boss figyelmeztetések
             if legyozott == 14:
-                print("⚠️ Következő harc: Sötét Lovag!")
+                print("⚠️ Következő harc: Sötét Lovag! (BOSS)")
 
             elif legyozott == 29:
-                print("⚠️ Következő harc: Tűz Sárkány!")
+                print("⚠️ Következő harc: Tűz Sárkány! (BOSS)")
 
             elif legyozott == 49:
-                print("⚠️ Következő harc: Mocsári Rém!")
+                print("⚠️ Következő harc: Mocsári Rém! (BOSS)")
 
             elif legyozott == 99:
-                print("⚠️ Következő harc: Az Örök Sötétség Ura!")
+                print("⚠️ Következő harc: Az Örök Sötétség Ura! (BOSS)")
 
             # Bossok
             if legyozott == 15:
